@@ -1,472 +1,623 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		
-		<script src="{{ asset('js/bootbox.min.js') }}"></script>
-		
-		<title>EM-HR - HRIS Application System The Best and Complete</title>
-		<style type="text/css">
-			body {
-				font-family: "Trebuchet MS", Helvetica, sans-serif;
-			}
-			.bg-1 {
-				background: url('{{ asset('landing-page/2019-05-28/Background1.png') }}');
-				background-size: contain;
-			}
-			.bg-2 {
-				background: url('{{ asset('landing-page/2019-05-28/Background2.png') }}');
-				background-size: cover;
-				padding-top: 40px;
-			}
-			.form form {
-				background: white;
-			}
-			.btn_trial_1 {
-				background: url('{{ asset('landing-page/2019-05-28/button trial now.png') }}');
-				background-size: cover;
-				border: 0;
-				width: 252px;
-				height: 45px;
-				color : white;
-				font-size: 20px;
-				cursor: pointer;
-			}
-			.btn_trial_2 {
-				background: url('{{ asset('landing-page/2019-05-28/button trial now.png') }}');
-				background-size: cover;
-				border: 0;
-				width: 303px;
-				height: 54px;
-				color : white;
-				font-size: 20px;
-				cursor: pointer;
-			}
-			.btn_trial_3 {
-				background: url('{{ asset('landing-page/2019-05-28/button trial now.png') }}');
-				background-size: cover;
-				border: 0;
-				width: 303px;
-				height: 54px;
-				color : white;
-				font-size: 20px;
-			}
-			.bg-form-title {
-				background: url('{{ asset('landing-page/2019-05-28/button trial start register.png') }}');
-				background-size: cover;
-				border: 0;
-				width: 100%;
-				height: 54px;
-				color : white;
-				font-size: 20px;
-			}
-			.section-1 {
-				margin-top: 15%;
-			}
+<?php 
+include 'header.php';
+?>
+<style>
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
 
-			.btn_login 
-			{
-				color: white !important;
-				background: #bfbfbf;
-			    width: 100px;
-			    border-radius: 0 0 17px 17px;
-			    margin-top: -1px;
-			    height: 45px;
-			    margin-right: 25px;
-			    border: 0;
-			    padding-top: 10px;
-			}
-		</style>
-		<script type="text/javascript">
-			function form_free_trial()
-			{
-				$('html, body').animate({
-			        scrollTop: $(".container_bottom").offset().top
-			    }, 1000);
-			}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 
-			@if(Session::has('message-success'))
-				alert("{{ Session::get('message-success') }}");
-			@endif
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 
-		</script>
-	</head>
-<body>
-	<div>
-		<a href="{{ route('login') }}" class="btn btn-info float-right btn_login">Login</a>
-		<div class="bg-2" >
-		  <div class="container">
-			<div class="row" > 
-				<div class="col-md-4 float-left section-1">
-					<h1 style="color: #acce22; font-size: 53px;">EM-HR</h1>
-					<h3 style="color: #0e9a88; font-size: 29px;">HRIS Application System The Best and Complete</h1>
-					<h4 style="margin-bottom: 4px;margin-top: 15px;">Help Your Company</h4>
-					<p>
-						Save Up To Tens Of Millions Of Rupiah <br />
-						Easy, Practical & Efficient 	
-					</p>
-					<button class="btn_trial_1" onclick="form_free_trial()">Create Member</button>
-				</div>
+</style>
 
-				<div class="col-md-8 float-right section-1" >
-					<img src="{{ asset('landing-page/2019-05-28/modelEMHRsmall.png') }}" style="width: 125%; position: absolute; bottom: -10px; right: -195px;">
-				</div>
-			</div>
-		  </div>
+<script>
+ /*  function showImg(btn){
+      if(btn == 'RH'){
+         document.getElementById('recruit-img').style.display = 'block';
+         document.getElementById('header-img').innerHTML = 'Recruitment & Head Hunting';
+      }else if(btn == 'PR'){
+         document.getElementById('payroll-image').style.display = 'block';
+         document.getElementById('header-img').innerHTML = 'Payroll';
+      }else if(btn == 'CT'){
+         document.getElementById('contract-temporary').style.display = 'block';
+         document.getElementById('header-img').innerHTML = 'Contract & Temporary Staffing';
+      }else{
+         document.getElementById('mobile-attendance').style.display = 'block';
+         document.getElementById('header-img').innerHTML = '';
+      }
+   }
 
+   function hideImg(btn){
+      if(btn == 'RH'){
+         document.getElementById('recruit-img').style.display = 'none';
+      }else if(btn == 'PR'){
+         document.getElementById('payroll-image').style.display = 'none';
+      }else if(btn == 'CT'){
+         document.getElementById('contract-temporary').style.display = 'none';
+      }else{
+         document.getElementById('mobile-attendance').style.display = 'none';
+      }
+      document.getElementById('header-img').innerHTML = '';
+   }  */
 
+   var nn = 0;
+   var nn2 = 0;
+   slideshow1();
+   slideshow2();
 
-			<div class="container" >
-				<div class="col-md-6 float-left section-1" >
-					<iframe width="100%" height="320px" src="https://www.youtube.com/embed/y8h1fB7lSIQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
-				<div class="col-md-6 float-right section-1">
-					<h1 style="font-size: 320%; font-weight: 800; color: #0E9A88;">Em-HR System</h1>
-					<h5 style="text-align: justify;">Still choosing the application that suit your office needs ? Now comes the web based Em-HR application 
-						that makes it easy for Business Owner and HRD to manage and analyze employee performance</h5>
+   function slideshow1(){
+      var i;
+      for(i = 1; i < 3; i++){
+         $('#slide'+i).hide();
+      }
+      nn++;
+      
+      if(nn > 2){
+         nn = 1;
+      }
 
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="container" style="margin-top: 7%; ">
-				<div style="margin: 50px 0;">
-					<div class="row">
-						<div class="col-md-12" style="text-align: center; margin-bottom: 20px;">
-							<h1 style="font-size: 320%; font-weight: 800;">Why do we have to use the system <span style="color: #0E9A88;">Em-HR</span> ?</h1>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4">
-							<img style="margin: 0 25%; width: 30%;" src="{{ asset('landing-page/2019-05-28/simple-and-easy.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 15% 5% 5%; text-align: center; font-size: 18px;">
-								<h3>Simple and Easy to Use</h3>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<img style="margin: 0 30%;  width: 40%;" src="{{ asset('landing-page/2019-05-28/Complete Features.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 10% 5% 10%; text-align: center; font-size: 18px;">
-								<h3>Complete Features</h3>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<img style="margin: 0 30%;  width: 53%;" src="{{ asset('landing-page/2019-05-28/Affordable Prices.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 10% 5% 20%; text-align: center; font-size: 18px;">
-								<h3>Affordable Prices</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-				
+      var prev = nn - 1;
+      console.log(prev);
+      $('#slide'+nn).show();
+      var getno = setTimeout("slideshow1()", 5000);
+   }
 
+   function slideshow2(){
+      var i;
+      for(i = 1; i < 5; i++){
+         $('#slides'+i).hide();
+      }
+      nn2++;
+      
+      if(nn2 > 4){
+         nn2 = 1;
+      }
 
-				<div>
-					<div class="row" style="margin-top: 10%; margin-bottom: 3%;">
-						<div class="col-md-12" style="text-align: center;">
-							<h2 style="font-size: 320%; font-weight: 800;">What feature do you get from</h2>
-							<h2 style="font-size: 360%; font-weight: 800; color: #0E9A88;">the Em-HR System?</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-4" >
-							<img style="margin: 0 35%; width: 40%;" alt="leave and permit" src="{{ asset('landing-page/2019-05-28/Core HR.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 10% 5% 15%; text-align: center; font-size: 18px;">
-								<p>Standard modules that are often used in managing human resource</p>
-							</div>
-						</div>
-						<div class="col-md-4" >
-							<img style="margin: 0 35%; width: 40%;" alt="leave and permit" src="{{ asset('landing-page/2019-05-28/Payroll.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 10% 5% 15%; text-align: center; font-size: 18px;">
-								<p>Detail of personal pay rate calculation net / gross</p>
-							</div>
-						</div>
-						<div class="col-md-4" >
-							<img style="margin: 0 35%; width: 60%;" alt="Leave and permit" src="{{ asset('landing-page/2019-05-28/Leave and permit.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 10% 5% 15%; text-align: center; font-size: 18px;">
-								<p>For employee who will apply for leave or for permission</p>
-							</div>
-						</div>
-
-
-						<div class="col-md-4" >
-							<img style="margin: 0 15%; width: 75%;" alt="Payment Request" src="{{ asset('landing-page/2019-05-28/Payment Request.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 10% 5% 15%; text-align: center; font-size: 18px;">
-								<p>Advance Claim or any payment related to employee task</p>
-							</div>
-						</div>
-						<div class="col-md-4" >
-							<img style="margin: 0 14%; width: 80%;" alt="Overtime Request" src="{{ asset('landing-page/2019-05-28/Overtime Request.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 10% 5% 15%; text-align: center; font-size: 18px;">
-								<p>Determine calculation of overtime rate in terms of number of hours and wages</p>
-							</div>
-						</div>
-						<div class="col-md-4" >
-							<img style="margin: 0 8%; width: 112%;" alt="Medical Reimbursement" src="{{ asset('landing-page/2019-05-28/Medical Reimbursement.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 10% 5% 15%; text-align: center; font-size: 18px;">
-								<p>Advance claim or any payment related to employee task</p>
-							</div>
-						</div>
-
-
-						<div class="col-md-4" >
-							<img style="margin: 0 0; width: 100%;" alt="Training and Business Trip" src="{{ asset('landing-page/2019-05-28/Training and Business Trip.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 10% 0 15%; text-align: center; font-size: 18px;">
-								<p>Claimable expenses or Cash Advance method</p>
-							</div>
-						</div>
-						<div class="col-md-4" >
-							<img style="margin: 0 5%; width: 100%;" alt="Exit Interview & Clearance" src="{{ asset('landing-page/2019-05-28/Exit Training & Clearance.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 5% 10% 0 20%; text-align: center; font-size: 18px;">
-								<p>Procedure to validating employee has no pending obligation to the company</p>
-							</div>
-						</div>
-						<div class="col-md-4" >
-							<img style="margin: 0 38%; width: 43%;" alt="Attendance" src="{{ asset('landing-page/2019-05-28/Attendance.png') }}"/>
-							<div class="col-md-12" style="padding: 5% 0 0 20%; text-align: center; font-size: 18px;">
-								<p>integrating several attendance devices such as finger print machines, mobile attendance is an integrated Em-HR system</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-md-6" >
-						<img style="margin: 0 45%; width: 28%;" alt="Dashboard" src="{{ asset('landing-page/2019-05-28/Dashboard.png') }}"/>
-						<div class="col-md-12" style="padding: 5% 10% 0 30%; text-align: center; font-size: 18px;">
-							<p>Brief information on module selection in the form of diagrams or graphic value</p>
-						</div>
-					</div>
-					<div class="col-md-6" >
-						<img style="margin: 0 15%; width: 58%;" alt="Facility Management" src="{{ asset('landing-page/2019-05-28/Facility Management.png') }}"/>
-						<div class="col-md-12" style="padding: 2% 30% 0 20%; text-align: center; font-size: 18px;">
-							<p>asset management settings used by employees</p>
-						</div>
-					</div>
-				</div>
-
-
-				<div style="margin-top: 11%;">
-					<div class="row" style="padding-bottom: 5%;">
-						<div class="col-md-12" style="text-align: center;">
-							<h1 style="font-size: 320%; font-weight: 800;"><b>Easy Step to Use the <span style="color: #0E9A88;">Em-HR System</span></b></h1>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4" >
-							<img style="margin: 0 35%; width: 40%;" alt="Register for free" src="{{ asset('landing-page/2019-05-28/Register for free.png') }}"/>
-							
-							<div class="col-md-12" style="padding: 2% 20% 0 30%; text-align: center; font-size: 18px;">
-								<h4>Register for free</h4>
-							</div>
-						</div>
-						<div class="col-md-4" >
-							<img style="margin: 0 35%; width: 40%;" alt="install emhr"src="{{ asset('landing-page/2019-05-28/install emhr.png') }}"/>
-							<div class="col-md-12" style="padding: 2% 20% 0 30%; text-align: center; font-size: 18px;">
-								<h4>Install Em-HR</h4>
-							</div>
-						</div>
-						<div class="col-md-4" >
-							<img style="margin: 0 35%; width: 40%;" alt="feel the ease" src="{{ asset('landing-page/2019-05-28/feel the ease.png') }}"/>
-							<div class="col-md-12" style="padding: 2% 20% 0 30%; text-align: center; font-size: 18px;">
-								<h4>Feel the Ease</h4>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		  <div class="container container_bottom" style="margin-top: 9%;">
-			<div class="col-md-4 float-left">
-				<img src="{{ asset('landing-page/2019-05-28/bubble background.png') }}" style="width: 73%; margin-left: -23px; margin-top: 70px" />
-			</div>
-			<div class="col-md-8 float-right">
-				<h1 class="text-center"><label style="color: #0e9a88;font-size: 29px;">There is ease in</label> <label style="color: #acce22">EM-HR</label> <label  style="color: #0e9a88">Application</label></h1>
-			
-				<div class="form">
-					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8">
-							<form method="POST" action="{{ route('post-landing-page1') }}" class="col-md-12 px-0 pt-2" style="padding-top: 0px !important; padding-bottom: 10px">
-							{{ csrf_field() }}
-							<div class="bg-form-title">
-								<h3 style="color: white; text-align: center;font-size: 23px;padding-top: 10px !important;" class="py-2 px-0 mx-0 mt-0">Register Member</h3>
-							</div>
-							@if (count($errors) > 0)
-								<div class="alert alert-danger">
-									<strong>Whoops!</strong> There were some problems with your input.<br><br>
-									<ul>
-									@foreach ($errors->all() as $error)
-										<li>{{ $error }}</li>
-									@endforeach
-									</ul>
-								</div>
-							@endif
-							<div class="px-5 pt-4">
-								<div class="form-group">
-									<input type="text" class="form-control" id="nama" name="nama" placeholder="Full Name" value="{{ old('nama') }}" required>
-								</div>
-								<div class="form-group">
-									<select id="jabatan" name="jabatan" class="form-control">
-										<option value=""> - Position - </option>
-										<option>Owner</option>
-										<option>HRD / Finance</option>
-										<option>IT</option>
-										<option>Others</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
-								</div>
-								<!--div class="form-group">
-									<input type="password" class="form-control" name="password" placeholder="Password"  value="{{ old('password') }}" required>
-								</div>
-								<div class="form-group">
-									<input type="password" class="form-control" name="confirm" placeholder="Confirm Password" value="{{ old('confirm') }}" required>
-								</div-->
-								<div class="form-group">
-									<input type="input" class="form-control" id="nama_perusahaan" name="nama_perusahaan" placeholder="Company" value="{{ old('company') }}" required>
-								</div>
-								<div class="form-group">
-									<select class="form-control" id="bidang_usaha" name="bidang_usaha" required>
-										<option value=""> - Choose Business Specialization - </option>
-										<option>Agriculture / Mining</option>
-										<option>Business Services</option>
-										<option>Computers and Electronics</option>
-										<option>Consumer Services</option>
-										<option>Education</option>
-										<option>Energy & Utilities</option>
-										<option>Financial Services</option>
-										<option>Government</option>
-										<option>Healtcare, Pharmaceuticals, & Biotech</option>
-										<option>Manufacturing</option>
-										<option>Media & Entertainment</option>
-										<option>Non Profit</option>
-										<option>Real Estate & Contruction</option>
-										<option>Retail</option>
-										<option>Software & Internet</option>
-										<option>Telecommunications</option>
-										<option>Transportation & Storage</option>
-										<option>Travel, Recreation, & Leisure</option>
-										<option>Wholesale & Distribution</option>
-										<option>Consumer Products</option>
-										<option>Others</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<input type="text" id="handphone" name="handphone" class="form-control" placeholder="Handphone Number" value="{{ old('handphone') }}" required>
-								</div>
-								<!-- <div class="form-group">
-									<div class="float-left px-0 mx-0" style="width: 15px">
-										<input type="checkbox" name="agree" value="1" required>
-									</div>
-									<div class="float-left col-md-11" style="padding-left: 7px !important; padding-top: 2px !important;">
-										<label style="font-size: 12px;">I have read and agree to the EM-HR.com and End User License Agreement</label>
-									</div>
-									<div class="clearfix"></div>
-								</div> -->
-							</div>
-							<div class="form-group text-center">
-								<button class="btn_trial_2" type="submit">Create Member</button>
-							</div>
-						</form>
-
-						</div>
-						
-						<div class="col-md-4"></div>
-					</div>
-					
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="row" style="margin: 120px 0 0 0;">
-				<div class="col-md-4">
-						<img style="width: 80%;" alt="hand with phone" src="{{ asset('landing-page/2019-05-28/hand with phone.png') }}"/>
-					</div>
-					<div class="col-md-8">
-					<br><br>
-						<div class="row">
-							<h3>Get <span style="color: #0E9A88;">Em-HR Mobile Attendance</span> service with 2 easy steps</h3>
-							<p>Register your company on this site, then download the EMHR Attendance Application on :</p>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<img style="width: 70%; padding: 0 0 0 20%;" src="{{ asset('landing-page/2019-05-28/playstore dan IOS.png') }}"/>
-							</div>
-						</div>
-					</div>
-			</div>	
-		</div>
-
-
-		<div style="text-align: center;">
-			<img src="{{ asset('landing-page/2019-05-28/line botton.png') }}" style="width: 100%;">
-			<div style="padding: 1% 0;">
-				<div class="xb-col-12">
-					<div class="bottom-footer center">
-						<div class="copyright no-social" style="font-size: 100%; color: rgba(0, 0, 0, 0.4)">Copyright © PT. Empore Hezer Tama <?php echo date('Y'); ?></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	  </div>
-	</div>
-
-<script type="text/javascript">
-	$('#nama').on('input', function(){
-		$('#nama2').val($('#nama').val());
-	});
-	$('#jabatan').change(function(){
-		$('#jabatan2').val($('#jabatan').val());
-	});
-	$('#email').on('input', function(){
-		$('#email2').val($('#email').val());
-	});
-	$('#nama_perusahaan').on('input', function(){
-		$('#nama_perusahaan2').val($('#nama_perusahaan').val());
-	});
-	$('#bidang_usaha').on('change', function(){
-		$('#bidang_usaha2').val($('#bidang_usaha').val());
-	});
-	$('#handphone').on('input', function(){
-		$('#handphone2').val($('#handphone').val());
-	});
-
-
-	function submitFormPricelist(){
-		if($('#nama2').val() != '' || $('#jabatan2').val() != '' || $('#email2').val() != '' || $('#nama_perusahaan2').val() != '' || $('#bidang_usaha2').val() != '' || $('#handphone2').val() != ''){
-			$('#form-price-list').submit();
-		}else{
-			bootbox.confirm({
-                title : "<i class=\"fa fa-warning\"></i> EMPORE SYSTEM",
-                message: "Field tidak boleh kosong",
-                closeButton: false,
-                buttons: {
-
-                },
-                callback: function (result) {
-                    if(result)
-                    { 
-                        
-                    }
-                }
-            });
-		}
-	}
-	
+      var prev = nn2 - 1;
+      console.log(prev);
+      $('#slides'+nn2).show();
+      var getno = setTimeout("slideshow2()", 3000);
+   }
 </script>
 
-</body>
+<!--    CSS NEW TEMPLATE    -->
+<link rel="stylesheet" type="text/css" href="themes/twentyfifteen/css/stylefornewtemplate.css" />
+<!--    END CSS NEW TEMPLATE    -->
+<link rel='stylesheet' id='home-redesign-style-css'  href='themes/twentyfifteen/css/pages/home/home.min8e5e.css?v=15' type='text/css' media='all' />
+   <body>
+         <!--div class="xb-global-container"-->
+         <div class="xb-global-container" >
+            <header id="scrolling" class="header present-header desktop-version">
+               <div class="home-head-bg">
+                  <div class="home-head-carousel js-head-carousel"></div>
+                  <div class="home-head-bg-roof"></div>
+               </div>
+               <?php include 'menu.php'; ?>
+               <div class="home-header-entry left-bottom">
+                  <div class="xb-block">
+                     <div class="xb-row">
+                        <div class="xb-col-12">
+                           <h1 class="home-header-caption" style="text-align: center;">Empore committed to empower your business and become parts of your success journey</h1>
+                           <p class="home-header-text" style="text-align: center;"> As corporate challenge ahead become more complex and tight, especially in the digital era with high demanding on Information Technology application and resources, Empore presents to simplify the complexity. You will get a reliable partner with deep experiences and expertise in software development and Human Resource Management, along with all supporting technology. We will speed up and streamline your business with the latest software technology and best manpower to run your company.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </header><div style="clear: both;"></div>
+
+
+            <div style="background-color: #EBEBEB; padding: 40vh 10vh; overflow: hidden;">
+               <div class="xb-block">
+                  <div class="xb-row">
+                     <div class="xb-col-6">
+                        <div class="xb-col-8" style="float: right;">
+                           <img src="images/new_template/office_table.png" style="width: 100%; height: auto;" >
+                        </div>
+                     </div>
+                     <div class="xb-col-6" style="float: left;">
+                        <p class="welcome-to">Welcome to</p>
+                        <p class="empore-zone">EMPORE ZONE</p>
+                        <p class="let-us">Let Us Help You</p>
+                        <p class="please">Please Choose the Service You Want to Find Further</p>
+                        <br>
+                        <h3 style="font-family: Arial; font-weight: 800; font-size: 20px;">
+                           <span><a href="#IT-Services" style="text-decoration: none; color: #ACCE22;">IT SERVICE </a></span><span style="color: #ACCE22;"> | </span><span><a href="#HR-Services" style="text-decoration: none; color: #ACCE22;"> HR SERVICE</a></span>
+                        </h3>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+            <div id="IT-Services" style="background-color: #DCDDDD; padding: 20vh 5vh; overflow: hidden;">
+               <div class="xb-block">
+                  <div class="xb-row">
+                     <div class="xb-col-6" style="">
+                        <div class="xb-col-10" style="float: right;">
+                           <p style="font-family: Arial; color: #0E9A88; font-weight: 700; font-size: 42px;">Our Commitment</p>
+                           <p style="font-family: Trebuchet MS; font-size: 17px; padding-left: 5px;">to help you in the world of information technology</p>
+                           <br>
+                           <div>
+                              <ul style="padding-left: 15px; list-style-type: none; line-height: 30px;" >
+                                 <li><a href="custom-software-development.php" class="link-list"><div class="list-pointer" style="background-color: #0E9A88; "></div>Custom Software Development</a></li>
+                                 <li><a href="saas-application-development.php" class="link-list"><div class="list-pointer" style="background-color: #ACCE22; "></div>Saas Application Development</a></li>
+                                 <li><a href="cloud-software-development.php" class="link-list"><div class="list-pointer" style="background-color: cyan; "></div>Cloud Software Development Services</a></li>
+                                 <li><a href="app-modernization-service.php" class="link-list"><div class="list-pointer" style="background-color: white; "></div>Application Enhancement</a></li>
+                                 <li><a href="ui-ux-development-service.php" class="link-list"><div class="list-pointer" style="background-color: #0E9A88; "></div>UX/UI Development and Desing</a></li>
+                                 <li><a href="custom-software-development.php" class="link-list"><div class="list-pointer" style="background-color: #ACCE22; "></div>Mobile Application Development</a></li>
+                                 <li><a href="full-qa-cycle.php" class="link-list"><div class="list-pointer" style="background-color: cyan; "></div>Full Life Cycle Software Testing</a></li>
+                                 <li><a href="hire-dedicated-web-developers-team.php" class="link-list"><div class="list-pointer" style="background-color: white; "></div>Dedicated In House Programmer</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="xb-col-6">
+                        <div class="xb-row">
+                           <div class="xb-col-8">
+                              <img src="images/new_template/it_service.png" style="width: 100%; height: auto;">
+                           </div>
+                        </div>
+                        <br>
+                        <div class="xb-row">
+                           <div class="xb-col-2"></div>
+                           <div class="xb-col-8">
+                              <a href="free-consultation.php"><div style="font-family: Trebuchet MS; background-color: #0E9A88; padding: 10px 10px; color: white; width: 128px;">Free Consultation</div></a>
+                          
+                           </div>
+                           <div class="xb-col-2"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+            
+            <div style="background-color: #EBEBEB; padding: 0 12%; overflow: hidden; height: 100vh; width: auto;">
+               <div class="xb-block xb-col-12">
+                  <a href="www.em-hr.co.id"><img id="slide1" class="fade" style="width: auto; height: 100vh; display: none;"  src="images/new_template/slide1.png" ></a>
+                  <a href=""><img id="slide2" class="fade" style="width: auto; height: 100vh; display: none;"  src="images/new_template/slide2.png" ></a>
+               </div>
+            </div>
+
+            <div id="HR-Services" style="background-color: #DCDDDD; padding: 20vh 5vh; overflow: hidden;">
+               <div class="xb-block">
+                  <div class="xb-row">
+                     <div class="xb-col-6">
+                        <div class="xb-col-12" style="float: right; width: 80%;">
+                           <div class="xb-row">
+                              <p><span style="color: #6ba5ff;">Human resource</span> are very important for the process of running the company, 
+                              We are here to serve your human resource and company information systems</p>
+                           </div>
+                           <br>
+                           <div class="xb-col-12">
+                              <img class="image-div" id="recruit-img" src="images/new_template/Button-Service.png" >
+                           </div>
+                           <!--div class="xb-col-12">
+                              <div class="xb-row">
+                                 <div class="xb-col-4" onmouseenter="showImg('RH');" onmouseleave="hideImg('RH')">
+                                    <a href="recruitment-and-head-hunting.php" ><img id="RH" style="width: 100%; height: auto;" src="images/new_template/buttonRH.png" ></a>
+                                 </div>
+                                 <div class="xb-col-4" onmouseenter="showImg('PR');" onmouseleave="hideImg('PR')">
+                                    <a href="payroll.php" onclick="showImg('PR');"><img id="PR" style="width: 100%; height: auto;" src="images/new_template/buttonPR.png" ></a>
+                                 </div>
+                                 <div class="xb-col-4">
+                                 </div>
+                              </div>
+                           </div>
+                           
+                           <div class="xb-row">
+                              <div class="xb-col-4" style="display: inline-block;" >
+                              </div>
+                              <div class="xb-col-4" style="display: inline-block;" onmouseenter="showImg('CT');" onmouseleave="hideImg('CT')">
+                                 <a href="contract-and-temporary-staffing.php"><img id="CT" style="width: 100%; height: auto;" src="images/new_template/buttonCT.png" ></a>
+                              </div>
+                              <div class="xb-col-4" style="display: inline-block;" onmouseenter="showImg('MA');" onmouseleave="hideImg('MA')">
+                                 <a href=""><img id="MA" style="width: 100%; height: auto;" src="images/new_template/buttonMA.png" ></a>
+                              </div>
+                           </div-->
+                        </div>
+                     </div>
+                     <div class="xb-col-6" >
+                        <a href="recruitment-and-head-hunting.php" style="text-decoration: none; color: black;">
+                           <div class="xb-row" id="slides1" style="display: none;">
+                              <img class="image-div" id="recruit-img" src="images/new_template/recruit-img.png" >
+                              <br><br>
+                              <div class="xb-col-12">
+                                 <div class="xb-block">
+                                    <p style="font-size: 25px; font-weight: 700;">Recruitment & Head Hunting (RH)</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </a>
+                        <a href="payroll.php" style="text-decoration: none; color: black;">
+                           <div class="xb-row" id="slides2" style="display: none;">
+                              <img class="image-div" id="payroll-image" src="images/new_template/payroll-image.png" >
+                              <br><br>
+                              <div class="xb-col-12">
+                                 <div class="xb-col-3"></div>
+                                 <div class="xb-block xb-col-6">
+                                    <p style="font-size: 25px; font-weight: 700;">Payroll (PR)</p>
+                                 </div>
+                                 <div class="xb-col-3"></div>
+                              </div>
+                           </div>
+                        </a>
+                        <a href="contract-and-temporary-staffing.php" style="text-decoration: none; color: black;">
+                           <div class="xb-row" id="slides3" style="display: none;">
+                              <img class="image-div" id="contract-temporary" src="images/new_template/contract-temporary.png" >
+                              <br><br>
+                              <div class="xb-col-12">
+                                 <p style="font-size: 25px; font-weight: 700;">Contract & Temporary Staffing (CT)</p>
+                              </div>
+                           </div>
+                        </a>
+                        <a href="" style="text-decoration: none; color: black;">
+                           <div class="xb-row" id="slides4" style="display: none;">
+                              <img class="image-div" id="mobile-attendance" src="images/new_template/mobile-attendance.png" >
+                              <br><br>
+                              <div class="xb-col-12">
+                                 <div class="xb-col-2"></div>
+                                 <div class="xb-block xb-col-8">
+                                    <p style="font-size: 25px; font-weight: 700;">Mobile Attendance (MA)</p>
+                                 </div>
+                                 <div class="xb-col-2"></div>
+                              </div>
+                           </div>
+                        </a>
+                        <br>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+         <!-- END DIV 2 -->
+
+      <!-- SLIDE SHOW -->
+
+
+
+            <div class="home-page-container scroll-stop">
+               <!--div class="p-top-50">
+                  <div class="xb-block bottom-45">
+                     <div class="xb-row blocks-center">
+                        <div class="xb-col-12">
+                           <h2 class="section-title">Key Solutions</h2>
+                        </div>
+                     </div>
+                     <div class="xb-row blocks-center text-container p-top-35">
+                        <div class="xb-col-9 company-solutions-entry center"> Key solutions created by our software development services company include HR management systems, Top Up Management System, Company Profiles Solution, ERP solutions, and more. Work with us and you get access to one of the most efficient and dedicated enterprise software development companies around.</div>
+                     </div>
+                  </div>
+                  <div class="xb-flex-container js-solutions-section"> 
+                     <a href="free-consultation.php" title="" class="company-solution fms "> 
+                        <span class="company-solution__inside"> 
+                           <span class="company-solution__animation fms m-common js-solution js-bg" data-img="images/HR.jpg"></span> 
+                           <span class="company-solution__body"> 
+                              <span class="company-solution__title">HR Management <br /> Systems</span> 
+                              <span class="company-solution__content light-font fms">We create real-time employee management systems for small and large company and integrate them with external services.</span> 
+                              <span class="top-25 company-solution__footer"> 
+                                 <span class="company-solution__btn">Free Consultation?</span>
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a> 
+                     <a href="free-consultation.php" title="" class="company-solution erps"> 
+                        <span class="company-solution__inside" style="background: url(images/bg-erp.png);background-color: #e5464f;background-size: contain;background-repeat: no-repeat;background-position: right;"> 
+                          
+                           <span class="company-solution__body" style="float: left;"> 
+                              <span class="company-solution__title">Enterprise Resource <br /> Planning Systems</span> 
+                              <span class="company-solution__content light-font erps">One place, one solution for your business. All modules running at one solution line with awesome for each function. integrated, real-time and easy for monitoring. so.. You can manage your business with ease, and get ready for your success business.</span> 
+                              <span class="top-25 company-solution__footer"> 
+                                 <span class="company-solution__btn">Free Consultation?</span> 
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a> 
+                     <a href="free-consultation.php" title="" class="company-solution bis"> 
+                        <span class="company-solution__inside" style="background: url(images/bg-company-profile.png);background-size: inherit;background-repeat: no-repeat;background-position: right;"> 
+                         
+                           <span class="company-solution__body"> <span class="company-solution__title">Company Profiles<br /> Solutions</span> <span class="company-solution__content light-font bis">Let's start your digital customer acquisitions using awesome company presentation and growth up your company prestige with better position in search engine.</span> <span class="top-25 company-solution__footer"> <span class="company-solution__btn">Free Consultation?</span> </span> </span> </span> </a> <a href="free-consultation.php" title="" class="company-solution ces"> <span class="company-solution__inside"> <span class="company-solution__animation ces m-common js-solution js-bg" data-img="images/TMS.jpg"></span> <span class="company-solution__body" style="float: left;"> <span class="company-solution__title">Top Up Management<br /> Solutions</span> <span class="company-solution__content light-font ces" style="margin-top:15px">Give your employees with the best way for top up pulse, internet, electrical and many more about digital payment using one enterpise dashboard.</span> <span class="top-25 company-solution__footer"> <span class="company-solution__btn">Free Consultation?</span> </span> </span> </span> </a>
+                     </div>
+               </div-->
+               <div class="core-values js-bg">
+                  <div class="core-values-inside p-top-50 bottom-80">
+                     <div class="xb-block">
+                        <div class="xb-row">
+                           <div class="xb-col-12">
+                              <h2 class="section-title white">Our Values</h2>
+                           </div>
+                        </div>
+                        <div class="xb-row blocks-center p-top-35">
+                           <div class="xb-col-10">
+                              <div class="core-switcher">
+                                 <div class="core-switcher-head xb-flex-container js-activate">
+                                    <div class="core-switcher-btn js-core-switcher-btn" data-switch="0">
+                                       <svg class="core-switcher-svg" viewBox="0 0 60 60">
+                                          <path class="core-switcher-path" d="M36.7,51.7v1.7c0,1.3-1,2.5-2.3,2.7l-0.4,1.5c-0.2,0.8-1,1.4-1.9,1.4h-4.2c-0.9,0-1.6-0.6-1.9-1.4L25.6,56c-1.3-0.2-2.3-1.3-2.3-2.7v-1.7c0-0.9,0.7-1.6,1.6-1.6h10C35.9,50,36.7,50.8,36.7,51.7z M44.4,28.8c0,3.9-1.5,7.4-4,9.9c-1.9,2-3.1,4.5-3.5,7.1c-0.2,1.1-1.2,2-2.4,2h-8.9c-1.2,0-2.2-0.8-2.3-2c-0.4-2.7-1.7-5.2-3.6-7.1c-2.4-2.5-4-6-4-9.8c-0.1-7.9,6.3-14.4,14.3-14.4C37.9,14.5,44.4,20.9,44.4,28.8z M31.6,20.2c0-0.9-0.7-1.6-1.6-1.6c-5.7,0-10.4,4.6-10.4,10.3c0,0.9,0.7,1.6,1.6,1.6c0.9,0,1.6-0.7,1.6-1.6c0-3.9,3.2-7.1,7.1-7.1C30.9,21.8,31.6,21.1,31.6,20.2z M30,9.9c0.9,0,1.6-0.7,1.6-1.6V2.6C31.6,1.7,30.9,1,30,1c-0.9,0-1.6,0.7-1.6,1.6v5.6C28.4,9.1,29.1,9.9,30,9.9z M10.9,28.8c0-0.9-0.7-1.6-1.6-1.6H3.6c-0.9,0-1.6,0.7-1.6,1.6c0,0.9,0.7,1.6,1.6,1.6h5.7C10.2,30.4,10.9,29.7,10.9,28.8z M56.4,27.2h-5.7c-0.9,0-1.6,0.7-1.6,1.6c0,0.9,0.7,1.6,1.6,1.6h5.7c0.9,0,1.6-0.7,1.6-1.6C58,27.9,57.3,27.2,56.4,27.2z M14.2,42.2l-4,4c-0.6,0.6-0.6,1.6,0,2.3c0.3,0.3,0.7,0.5,1.1,0.5c0.4,0,0.8-0.2,1.1-0.5l4-4c0.6-0.6,0.6-1.6,0-2.3C15.9,41.6,14.8,41.6,14.2,42.2z M44.6,15.9c0.4,0,0.8-0.2,1.1-0.5l4-4c0.6-0.6,0.6-1.6,0-2.3c-0.6-0.6-1.7-0.6-2.3,0l-4,4c-0.6,0.6-0.6,1.6,0,2.3C43.8,15.7,44.2,15.9,44.6,15.9z M14.2,15.4c0.3,0.3,0.7,0.5,1.1,0.5c0.4,0,0.8-0.2,1.1-0.5c0.6-0.6,0.6-1.6,0-2.3l-4-4c-0.6-0.6-1.7-0.6-2.3,0c-0.6,0.6-0.6,1.6,0,2.3L14.2,15.4z M45.8,42.2c-0.6-0.6-1.7-0.6-2.3,0c-0.6,0.6-0.6,1.6,0,2.3l4,4c0.3,0.3,0.7,0.5,1.1,0.5c0.4,0,0.8-0.2,1.1-0.5c0.6-0.6,0.6-1.6,0-2.3L45.8,42.2z"></path>
+                                       </svg>
+                                    </div>
+                                    <div class="core-switcher-btn js-core-switcher-btn" data-switch="1">
+                                       <svg class="core-switcher-svg" viewBox="0 0 60 60">
+                                          <path class="core-switcher-path" d="M50.9,12.5c-8.7,0-15.3-2.5-20.9-8c-5.6,5.5-12.2,8-20.9,8c0,14.3-2.9,34.7,20.9,43C53.8,47.2,50.9,26.7,50.9,12.5z M28.3,37.6l-7-7l3.1-3.1l3.8,3.9l7.3-7.3l3.1,3.1L28.3,37.6z""></path>
+                                       </svg>
+                                    </div>
+                                    <div class="core-switcher-btn js-core-switcher-btn" data-switch="2">
+                                       <svg class="core-switcher-svg" viewBox="0 0 60 60">
+                                          <path class="core-switcher-path" d="M51.5,24.8c0,1.9-0.6,3.7-1.6,5.2c1,1.5,1.6,3.3,1.6,5.2c0,4.2-2.9,7.8-6.7,8.8c0,0.2,0,0.5,0,0.7c0,4.5-3.7,8.3-8.2,8.3c-2,0-3.8-0.7-5.2-1.9V35.7h1.2v2.1h3v-2.1h2.1v-3h-2.1v-1.2h2.1v-3h-2.1v-1.2h2.1v-3h-2.1v-2.1h-3v2.1h-1.2V8.9C32.9,7.7,34.7,7,36.7,7c4.5,0,8.2,3.7,8.2,8.3c0,0.3,0,0.5,0,0.7c1.6,0.4,3.1,1.3,4.3,2.6C50.6,20.3,51.5,22.5,51.5,24.8zM27.3,27.3h5.4v5.5h-5.4V27.3z M27.3,22.2h-3v2.1h-2.1v3h2.1v1.2h-2.1v3h2.1v1.2h-2.1v3h2.1v2.1h3v-2.1h1.2v2.1l0,0v13.3c-1.4,1.2-3.2,1.9-5.2,1.9c-4.5,0-8.2-3.7-8.2-8.3c0-0.3,0-0.5,0-0.7c-3.9-1-6.7-4.6-6.7-8.8c0-1.9,0.6-3.7,1.6-5.2c-1-1.5-1.6-3.3-1.6-5.2c0-2.3,0.9-4.5,2.4-6.2c1.2-1.3,2.7-2.2,4.3-2.6c0-0.2,0-0.5,0-0.7c0-4.5,3.7-8.3,8.2-8.3c2,0,3.8,0.7,5.2,1.9v15.4h-1.2V22.2z"></path>
+                                       </svg>
+                                    </div>
+                                    <div class="core-switcher-btn js-core-switcher-btn" data-switch="3">
+                                       <svg class="core-switcher-svg" viewBox="0 0 60 60">
+                                          <path class="core-switcher-path" d="M51.5,41.7L40.6,30.8c0-0.6,0-1.2,0-1.7l10.9-10.9C55.5,25.5,55.5,34.4,51.5,41.7z M37.5,22.4c-0.8-0.8-1.6-1.4-2.6-1.9l10-10c0.8,0.6,1.6,1.3,2.4,2.1c0.8,0.8,1.4,1.5,2.1,2.4l-10,10C38.9,24.1,38.3,23.2,37.5,22.4zM29.1,19.3L18.2,8.5c7.3-4,16.2-4,23.5,0L30.8,19.3C30.3,19.3,29.7,19.3,29.1,19.3z M22.4,22.4c-0.8,0.8-1.4,1.6-1.9,2.6l-10-10c0.6-0.8,1.3-1.6,2.1-2.4c0.8-0.8,1.5-1.4,2.4-2.1l10,10C24.1,21,23.2,21.7,22.4,22.4z M19.3,30.8L8.5,41.7c-4-7.3-4-16.2,0-23.5l10.9,10.9C19.3,29.7,19.3,30.3,19.3,30.8z M22.4,37.5c0.8,0.8,1.6,1.4,2.6,1.9l-10,10c-0.8-0.6-1.6-1.3-2.4-2.1c-0.8-0.8-1.4-1.5-2.1-2.4l10-10C21,35.9,21.7,36.8,22.4,37.5z M30.8,40.6l10.9,10.9c-7.3,4-16.2,4-23.5,0l10.9-10.9C29.7,40.7,30.3,40.7,30.8,40.6z M37.5,37.5c0.8-0.8,1.4-1.6,1.9-2.6l10,10c-0.6,0.8-1.3,1.6-2.1,2.4c-0.8,0.8-1.5,1.4-2.4,2.1l-10-10C35.9,38.9,36.8,38.3,37.5,37.5z"></path>
+                                       </svg>
+                                    </div>
+                                    <div class="core-switcher-btn js-core-switcher-btn" data-switch="4">
+                                       <svg class="core-switcher-svg" viewBox="0 0 60 60">
+                                          <path class="core-switcher-path" d="M47.4,43.8c-1.3,0-2.5-0.1-3.5-0.3c0,0.2,0,0.4,0,0.6c0,2.2-5.8,4.3-14,4.3c-8.7,0-14-2.2-14-4.3c0-0.2,0.1-0.4,0.1-0.6c-1,0.2-2.2,0.3-3.5,0.3c-4.8,0-7.6-1.2-7.6-2.4c0-2.4,2.9-4.7,7.6-4.7c2.8,0,5,0.9,6.3,2.1c2.4-2,6.1-3.4,11.1-3.4c4.8,0,8.6,1.4,11,3.4c1.3-1.2,3.4-2.1,6.3-2.1c4.6,0,7.6,2.4,7.6,4.7C55,42.6,51.8,43.8,47.4,43.8zM47.4,35.4c-1.5,0-2.9-0.6-3.8-1.6c-1-1-1.6-2.3-1.6-3.8c0-1.5,0.6-2.9,1.6-3.8c1-1,2.3-1.6,3.8-1.6c1.5,0,2.9,0.6,3.8,1.6c1,1,1.6,2.3,1.6,3.8c0,1.5-0.6,2.9-1.6,3.8C50.2,34.8,48.9,35.4,47.4,35.4z M30,33.3c-3,0-5.7-1.2-7.7-3.2c-2-2-3.2-4.7-3.2-7.7s1.2-5.7,3.2-7.7c2-2,4.7-3.2,7.7-3.2s5.7,1.2,7.7,3.2c2,2,3.2,4.7,3.2,7.7s-1.2,5.7-3.2,7.7C35.7,32,33,33.3,30,33.3z M12.6,35.4c-1.5,0-2.9-0.6-3.8-1.6c-1-1-1.6-2.3-1.6-3.8c0-1.5,0.6-2.9,1.6-3.8c1-1,2.3-1.6,3.8-1.6c1.5,0,2.9,0.6,3.8,1.6c1,1,1.6,2.3,1.6,3.8c0,1.5-0.6,2.9-1.6,3.8C15.5,34.8,14.1,35.4,12.6,35.4z"></path>
+                                       </svg>
+                                    </div>
+                                 </div>
+                                 <div class="core-switcher-body js-core-switcher-body js-activate js-parent-elem">
+                                    <div class="core-switcher-row light-font js-core-switch-content" data-content="0">
+                                       <div class="core-switcher-row-inside js-core-switcher-row js-child">
+                                          <div class="core-switcher-title">LISTEN AND ANALYSE YOUR NEEDS</div>
+                                          <div class="core-switcher-content">Before we start the project, we ensure that we walk on the same line of direction.</div>
+                                       </div>
+                                    </div>
+                                    <div class="core-switcher-row light-font js-core-switch-content" data-content="1">
+                                       <div class="core-switcher-row-inside js-core-switcher-row js-child">
+                                          <div class="core-switcher-title">QUALITY IS OUR MAIN CONCERN</div>
+                                          <div class="core-switcher-content">We built our application with the latest programming software and tested for The effectiveness and security.</div>
+                                       </div>
+                                    </div>
+                                    <div class="core-switcher-row light-font js-core-switch-content" data-content="2">
+                                       <div class="core-switcher-row-inside js-core-switcher-row js-child">
+                                          <div class="core-switcher-title"> ONE STEP AHEAD</div>
+                                          <div class="core-switcher-content">We research and update our tools and technology for the highest quality.</div>
+                                       </div>
+                                    </div>
+                                    <div class="core-switcher-row light-font js-core-switch-content" data-content="3">
+                                       <div class="core-switcher-row-inside js-core-switcher-row js-child">
+                                          <div class="core-switcher-title">FULL OF PASSION</div>
+                                          <div class="core-switcher-content">Every move of our action committed with heart and mind.</div>
+                                       </div>
+                                    </div>
+                                    <div class="core-switcher-row light-font js-core-switch-content" data-content="4">
+                                       <div class="core-switcher-row-inside js-core-switcher-row js-child">
+                                          <div class="core-switcher-title">INTEGRITY</div>
+                                          <div class="core-switcher-content">We are honest, ethical and fair.</div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="recent-cases-section p-top-50 bottom-65 js-recent-cases-section" style="display: none;"></div>
+               <div class="xb-col-12 p-top-50 bottom-60 ">
+                  <h3 class="section-title">Our Valuable Customer</h3>
+               </div><br />
+               <div class="relative">
+                  <div class="hp-progress-carousel js-progress-carousel"> 
+                     <span class="company-progress-block light-font"> 
+                        <span class="img-wrap company-progress-block__pict"> 
+                           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/client/client_adp.png" alt="" class="company-progress-block__img img-responsive lazy-load js-lazy-load" /> 
+                        </span> 
+                        <span class="company-progress-block__title">PT ADP International</span> 
+                        <span class="company-progress-block__info"> 
+                           <span class="company-progress-block__info-inside"> 
+                              <span class="company-progress-block__info-text">PT. ADP Marmer was established in 2000. It engaged in the manufacture and importation of marble, granite, travertine, sandstone and onyx from foreign countries such as: Italy, Spain, Portugal, Greece, Brazil, Turkey, China and many other countries, including the only highest quality marble from Indonesia.</span> 
+                           </span> 
+                        </span> 
+                     </span> 
+
+                     <a href="" title="" class="company-progress-block light-font" target="_blank"> 
+                        <span class="img-wrap company-progress-block__pict"> 
+                           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/client/client_aaf.png" alt="" class="company-progress-block__img img-responsive lazy-load js-lazy-load" /> 
+                        </span> 
+                        <span class="company-progress-block__title">PT. Arthaasia Finance</span> 
+                        <span class="company-progress-block__info"> 
+                           <span class="company-progress-block__info-inside"> 
+                              <span class="company-progress-block__info-text">
+                                 PT Arthaasia Finance is a financing company with the trademark “Asia Finance” who has established since year 2000 and has more than 30 branch office in entire Indonesia.
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a>
+                     <a href="" title="" class="company-progress-block light-font" target="_blank"> 
+                        <span class="img-wrap company-progress-block__pict"> 
+                           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/client/client_bali.png" alt="" class="company-progress-block__img img-responsive lazy-load js-lazy-load" /> 
+                        </span> 
+                        <span class="company-progress-block__title">PT Bali Towerindo Sentra, Tbk</span> 
+                        <span class="company-progress-block__info"> 
+                           <span class="company-progress-block__info-inside"> 
+                              <span class="company-progress-block__info-text">
+                                 A company that running business in tower provider and sharing transmission link at Bali. especially on Badung and Tabanan area. Company built network to be shared with cellular operator in area coverage and will be develop to be infrastructure solution.
+Currently has expanse the business into provider of Internet Protocol Television.
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a>
+                     <a href="" title="" class="company-progress-block light-font" target="_blank"> 
+                        <span class="img-wrap company-progress-block__pict"> 
+                           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/client/client_compnet.png" alt="" class="company-progress-block__img img-responsive lazy-load js-lazy-load" /> 
+                        </span> 
+                        <span class="company-progress-block__title">PT Nusantara Compnet Integrator</span> 
+                        <span class="company-progress-block__info"> 
+                           <span class="company-progress-block__info-inside"> 
+                              <span class="company-progress-block__info-text">
+                                 PT Nusantara Compnet Integrator Operates a Quality Management System which complies with the requirements of  ISO 9001:2015, ISO 14001:2015, OHSAS 18001:2007 for the following scope.
+The provision of information communication & technologies services reality to project management, design, implementation, and professional services.
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a> 
+                     <a href="" title="" class="company-progress-block light-font" target="_blank"> 
+                        <span class="img-wrap company-progress-block__pict"> 
+                           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/client/client_dc.png" alt="" class="company-progress-block__img img-responsive lazy-load js-lazy-load" /> 
+                        </span> 
+                        <span class="company-progress-block__title">PT Duraconindo Pratama</span> 
+                        <span class="company-progress-block__info"> 
+                           <span class="company-progress-block__info-inside"> 
+                              <span class="company-progress-block__info-text">
+                                 PT Duraconindo Pratama, manufacturer and contractor – Precast Concrete System.
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a> 
+                     <a href="" title="" class="company-progress-block light-font" target="_blank"> 
+                        <span class="img-wrap company-progress-block__pict"> 
+                           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/client/client_intim.png" alt="" class="company-progress-block__img img-responsive lazy-load js-lazy-load" /> 
+                        </span> 
+                        <span class="company-progress-block__title">Inti Makmur Meditama</span> 
+                        <span class="company-progress-block__info"> 
+                           <span class="company-progress-block__info-inside"> 
+                              <span class="company-progress-block__info-text">
+                                 Inti Makmur Meditama is a company that supplies and distributes “Diagnostic Products” to various cities in Indonesia. Established in Jakarta, Indonesia, since 1988.  
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a>
+
+                     <a href="" title="" class="company-progress-block light-font" target="_blank"> 
+                        <span class="img-wrap company-progress-block__pict"> 
+                           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/client/client_nokia.png" alt="" class="company-progress-block__img img-responsive lazy-load js-lazy-load" /> 
+                        </span> 
+                        <span class="company-progress-block__title">Nokia Network</span> 
+                        <span class="company-progress-block__info"> 
+                           <span class="company-progress-block__info-inside"> 
+                              <span class="company-progress-block__info-text">
+                                Nokia Networks (formerly Nokia Solutions and Networks (NSN) and Nokia Siemens Networks (NSN)) is a multinational data networking and telecommunications equipment company headquartered in Espoo, Finland, and wholly owned subsidiary of Nokia Corporation.  
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a>
+
+                     <a href="" title="" class="company-progress-block light-font" target="_blank"> 
+                        <span class="img-wrap company-progress-block__pict"> 
+                           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/client/client_praisindo.png" alt="" class="company-progress-block__img img-responsive lazy-load js-lazy-load" /> 
+                        </span> 
+                        <span class="company-progress-block__title">PT. Praisindo Teknologi</span> 
+                        <span class="company-progress-block__info"> 
+                           <span class="company-progress-block__info-inside"> 
+                              <!-- <span class="company-progress-block__title inside">PT. Praisindo Teknologi</span>  -->
+                              <span class="company-progress-block__info-text">
+                                 Praisindo Technology is one of the leading companies engaged in the field of Information Technology Services (IT) in Indonesia. 
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a> 
+                     <a href="" title="" class="company-progress-block light-font" target="_blank"> 
+                        <span class="img-wrap company-progress-block__pict"> 
+                           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/client/client_xdana.png" alt="" class="company-progress-block__img img-responsive lazy-load js-lazy-load" /> 
+                        </span> 
+                        <span class="company-progress-block__title">XDana Investa Indonesia</span> 
+                        <span class="company-progress-block__info"> 
+                           <span class="company-progress-block__info-inside"> 
+                              <span class="company-progress-block__info-text">
+                                 Xdana is the customer-centric and professional expert of Mutual Funds that puts integrity forward in inspiring and helping people improve their quality of life to win tomorrow. 
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a>
+
+                     <a href="" title="" class="company-progress-block light-font" target="_blank"> 
+                        <span class="img-wrap company-progress-block__pict"> 
+                           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" data-src="images/client/client_ajri.png" alt="" class="company-progress-block__img img-responsive lazy-load js-lazy-load" /> 
+                        </span> 
+                        <span class="company-progress-block__title">PT. Asuransi Jiwa Reliance</span> 
+                        <span class="company-progress-block__info"> 
+                           <span class="company-progress-block__info-inside"> 
+                              <span class="company-progress-block__info-text">
+                                 PT Asuransi Jiwa Reliance Indonesia (AJRI) is company that under Reliance Capital Management Group. With the vision to become worldwide financial institution who can provide the comprehensive financial solution to all customers.
+                              </span> 
+                           </span> 
+                        </span> 
+                     </a>
+
+                  </div>
+                  <div class="hp-progress-carousel__prev js-progress-carousel-prev">
+                     <span class="hp-carousel-arrow prev">
+                        <svg viewBox="0 0 44 44" class="hp-carousel-icon">
+                           <path class="hp-carousel-icon__path" d="M10.6,22c0-0.7,0.3-1.4,0.8-1.9L28.7,2.8c1.1-1.1,2.9-1.1,4,0c1.1,1.1,1.1,2.9,0,4L17.5,22l15.2,15.2c1.1,1.1,1.1,2.9,0,4c-1.1,1.1-2.9,1.1-4,0L11.4,23.9C10.9,23.4,10.6,22.7,10.6,22z"></path>
+                        </svg>
+                     </span>
+                  </div>
+                  <div class="hp-progress-carousel__next js-progress-carousel-next">
+                     <span class="hp-carousel-arrow next">
+                        <svg viewBox="0 0 44 44" class="hp-carousel-icon">
+                           <path class="hp-carousel-icon__path" d="M32.7,23.9L15.4,41.2c-1.1,1.1-2.9,1.1-4,0s-1.1-2.9,0-4L26.6,22L11.4,6.8c-1.1-1.1-1.1-2.9,0-4s2.9-1.1,4,0L32.6,20c0.6,0.6,0.8,1.2,0.8,1.9S33.2,23.4,32.7,23.9z"></path>
+                        </svg>
+                     </span>
+                  </div>
+               </div>
+
+               <div class="contact-us-container js-bg">
+                  <div class="contact-us-container-inside top-bottom-60">
+                     <div class="xb-block">
+                        <div class="xb-row blocks-center">
+                           <div class="xb-col-9">
+                              <div class="to-contacts">
+                                 <div class="to-contacts__title">Our Mission</div>
+                                 <div class="to-contacts__text light-font top-15"> Empower your business by providing the right people and IT solution
+                                 </div>
+                                 <div class="top-30"> <a href="contact-us.php" title="" class="to-contacts__btn" onclick="ga('send', 'pageview', '/home'); return true;">Contact US</a></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="contact-us-container js-bg" style="background-image: url('images/new_template/background.png');">
+                  <div class="contact-us-container-inside top-bottom-60">
+                     <div class="xb-block">
+                        <div class="xb-row blocks-center">
+                           <div class="xb-col-8">
+                              <a href="https://unionspace.id/en/terminal3.php" target="_blank">
+                                 <img src="images/new_template/Blasting OK.png" style="width: 103%;">
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="relative container-with-to-top">
+               <span class="to-top-btn">
+                  <span class="to-top-bg-elem">
+                     <svg class="to-top-bg" viewBox="0 0 65 58">
+                        <path class="to-top-bg circuit" d="M62.7 16.3l-9.3 35.2c-.8 3.3-3.3 4.5-5.9 3.5L6 33.4c-2.2-1-5.3-2.9-3.4-6L19.5 5.6c1.7-2 3.1-4 5.9-3.5l34 8.2c2.5.7 4.1 3.1 3.3 6z"></path>
+                     </svg>
+                  </span>
+                  <span class="to-top-arr-elem">
+                     <svg class="to-top-arr" viewBox="0 0 65 58">
+                        <path class="to-top-arr circuit" d="M41.2 23c-.3.3-.7.2-1-.1l-3.6-4.2v12.8c0 .4-.3.7-.7.7-.4 0-.7-.3-.7-.7V18.8L31.6 23c-.3.3-.7.3-1 .1-.2-.1-.2-.3-.2-.5s.1-.3.2-.5l4.8-5.6c0-.1.1-.1.2-.1h.1c.1 0 .2-.1.3-.1s.2 0 .3.1h.1c.1 0 .1.1.2.1l4.8 5.6c.1.2.1.7-.2.9z"></path>
+                     </svg>
+                  </span>
+               </span>
+            </div>
+            <?php include 'footer-link.php'; ?>
+         </div>
+         <script type='text/javascript' src='themes/twentyfifteen/js/cookies.min68b3.js?ver=1'></script> 
+         <script type='text/javascript' src='themes/twentyfifteen/js/all.scriptsf234.js?v=5&amp;ver=20150330'></script> 
+         <script type='text/javascript' src='//api-maps.yandex.ru/2.0/?load=package.standard&#038;lang=en-US&#038;ver=1'></script>
+         <script type='text/javascript' src='themes/twentyfifteen/js/pages/home/script.min08c8.js'></script>
+         <script type='text/javascript' src='themes/twentyfifteen/js/functions5ed1.js?v=132&amp;ver=20150330'></script> 
+   </body>
 </html>

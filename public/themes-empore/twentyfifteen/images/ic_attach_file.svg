@@ -1,0 +1,16 @@
+<svg id="ic_attach_file_24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #a9a9a9;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="_guide" data-name="#guide" class="cls-1" width="24" height="24"/>
+  <path id="Фигура_26" data-name="Фигура 26" class="cls-2" d="M19.571,10.586l-8.132,8.132A4,4,0,1,1,5.782,13.06l8.839-8.839a2.5,2.5,0,0,1,3.536,3.535l-7.425,7.425a1,1,0,1,1-1.414-1.414L16.035,7.05,14.975,5.99,8.257,12.707a2.5,2.5,0,1,0,3.536,3.536l7.425-7.424a4,4,0,0,0-5.657-5.657L4.722,12A5.5,5.5,0,1,0,12.5,19.778l8.132-8.131Z"/>
+</svg>

@@ -4,98 +4,36 @@
             <a href="javascript:void(0)" class="waves-effect"><img src="{{ asset('admin-css/images/user.png') }}" alt="user-img" class="img-circle"> <span class="hide-menu"> {{ Auth::user()->name }}</span>
             </a>
         </li>
-        <li><a href="{{ route('administrator.dashboard') }}"><i class="mdi mdi-chart-bar fa-fw" data-icon="v"></i> Dashboard </a></li>
+        <!--li><a href="{{ route('administrator.dashboard') }}"><i class="mdi mdi-chart-bar fa-fw" data-icon="v"></i> Dashboard </a></li-->
         <li class="devider"></li>
-        @if(checkModuleAdmin(3))
         <li>
-            <a href="{{ route('administrator.karyawan.index') }}">
-                <i class="mdi mdi-account-multiple fa-fw"></i> <span class="hide-menu">@lang('menu.employee')<span class="fa arrow"></span></span>
-            </a>
-        </li>
-        @endif
-        @if(checkModuleAdmin(4) || checkModuleAdmin(5) || checkModuleAdmin(6) || checkModuleAdmin(7) || checkModuleAdmin(8) || checkModuleAdmin(9) || checkModuleAdmin(13))
-        <li class="mega-nav">
-            <a href="#" style="position: relative;">
-                <i class="mdi mdi-playlist-check fa-fw"></i> <span class="hide-menu">Workflow Monitoring<span class="fa arrow"></span></span>
-            </a>
-            <ul class="nav nav-second-level">
-                    @if(checkModuleAdmin(4))
-                    <li><a href="{{ route('administrator.leaveCustom.index') }}"><i class="mdi mdi-calendar-multiple-check fa-fw"></i><span class="hide-menu">@lang('menu.leave_or_permit')</span></a></li>
-                    @endif
-                    @if(checkModuleAdmin(6))
-                    <li><a href="{{ route('administrator.paymentRequestCustom.index') }}"><i class="mdi mdi-cash-multiple fa-fw"></i><span class="hide-menu">@lang('menu.payment_request')</span></a></li>
-                    @endif
-                    @if(checkModuleAdmin(7))
-                    <li><a href="{{ route('administrator.overtimeCustom.index') }}"><i class="mdi mdi-clock-fast fa-fw"></i><span class="hide-menu">@lang('menu.overtime_sheet') </span></a></li>
-                    @endif
-                    @if(checkModuleAdmin(8))
-                    <li><a href="{{ route('administrator.trainingCustom.index') }}"><i class="mdi mdi-taxi fa-fw"></i><span class="hide-menu">Training & Business Trip</span></a></li>
-                    @endif
-                    @if(checkModuleAdmin(5))
-                    <li><a href="{{ route('administrator.medicalCustom.index') }}"><i class="mdi mdi-stethoscope fa-fw"></i><span class="hide-menu">Medical Reimbursement</span></a></li>
-                    @endif
-                    @if(checkModuleAdmin(9))
-                    <li><a href="{{ route('administrator.exitCustom.index') }}"><i class="mdi mdi-account-remove fa-fw"></i><span class="hide-menu">Exit Interview & Clearance</span></a></li>
-                    @endif
-                    @if(checkModuleAdmin(13))
-                    <li><a href="{{ route('administrator.request-pay-slip.index') }}"><i class="mdi mdi-library-books fa-fw"></i><span class="hide-menu">Request Pay Slip</span></a></li>
-                    @endif
-            </ul>
-        </li>
-        @endif
-        @if(checkModuleAdmin(3))
-        <li>
-            <a href="{{ route('administrator.organization-structure-custom.index') }}" class="waves-effect">
-            <i class="mdi mdi-sitemap fa-fw"></i> <span class="hide-menu">@lang('menu.organization_structure')<span class="fa arrow"></span></span>
+            <a href="{{ route('administrator.applicant.index') }}">
+                <i class="mdi mdi-account-multiple fa-fw"></i> <span class="hide-menu">Applicant<span class="fa arrow"></span></span>
             </a>
         </li>
         <li>
-            <a href="javascript:void(0)">
-                <i class="mdi mdi-newspaper fa-fw"></i> <span class="hide-menu">News List / Memo<span class="fa arrow"></span></span>
+            <a href="{{ route('administrator.job-vacancy.index') }}">
+                <i class="mdi mdi-account-multiple fa-fw"></i> <span class="hide-menu">Job Vacancy<span class="fa arrow"></span></span>
             </a>
-            <ul class="nav nav-second-level">
-                <li><a href="{{ route('administrator.news.index') }}"><i class="mdi mdi-book-multiple fa-fw"></i><span class="hide-menu">News</span></a></li>
-                <li><a href="{{ route('administrator.internal-memo.index') }}"><i class="mdi mdi-clipboard-text fa-fw"></i><span class="hide-menu">Internal Memo</span></a></li>
-                <li><a href="{{ route('administrator.peraturan-perusahaan.index') }}"><i class="mdi mdi-file-document-box fa-fw"></i><span class="hide-menu">Product Information</span></a></li>
-            </ul>
         </li>
-        @endif
-        @if(checkModuleAdmin(13))
+
         <li>
-            <a href="{{ route('administrator.payroll.index') }}">
-                <i class="mdi mdi-cash fa-fw"></i> <span class="hide-menu">Payroll</span>
+            <a href="{{ route('administrator.company-profile.index') }}">
+                <i class="mdi mdi-account-multiple fa-fw"></i> <span class="hide-menu">Company Profile<span class="fa arrow"></span></span>
             </a>
         </li>
-        @endif
-        @if(checkModuleAdmin(14))
+
         <li>
-            <a href="javascript:void(0)">
-                <i class="mdi mdi-nutrition fa-fw"></i> <span class="hide-menu">Facilities Management<span class="fa arrow"></span></span>
-            </a>
-            <ul class="nav nav-second-level">
-                <li>
-                    <a href="{{ route('administrator.asset.index') }}"><i class="mdi mdi-home-modern fa-fw"></i><span class="hide-menu">Facilities</span></a>
-                </li>
-                <li>
-                    <a href="{{ route('administrator.asset-type.index') }}"><i class="mdi mdi-plus-network fa-fw"></i><span class="hide-menu">Facilities Type</span></a>
-                </li>
-                <li>
-                    <a href="{{ route('administrator.asset-tracking.index') }}"><i class="mdi mdi-chemical-weapon fa-fw"></i><span class="hide-menu">Facilities Tracking</span></a>
-                </li>
-            </ul>
-        </li>
-        @endif
-       
-        @if(checkModuleAdmin(15))
-       <li>
-             <a href="{{ route('attendance.index') }}"><i class="mdi mdi-fingerprint fa-fw"></i><span class="hide-menu">Attendance</span></a>
-        </li>
-        @endif
-        <li class="mega-nav">
-            <a href="{{ route('administrator.setting.index') }}" class="waves-effect">
-                <i class="mdi mdi-settings fa-fw"></i> <span class="hide-menu">@lang('menu.setting')</span>
+            <a href="{{ route('administrator.job-list.index') }}">
+                <i class="mdi mdi-account-multiple fa-fw"></i> <span class="hide-menu">Job List<span class="fa arrow"></span></span>
             </a>
         </li>
+
+        <!-- <li>
+            <a href="{{ route('administrator.blog.index') }}">
+                <i class="mdi mdi-account-multiple fa-fw"></i> <span class="hide-menu">Blog<span class="fa arrow"></span></span>
+            </a>
+        </li> -->
         <!--As Karyawan-->
         @if(Auth::user()->project_id != 1)
             <li class="devider"></li>

@@ -1,0 +1,19 @@
+<svg id="img-_" data-name="img-!" xmlns="http://www.w3.org/2000/svg" width="33" height="64" viewBox="0 0 33 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffe599;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #ffc107;
+      }
+    </style>
+  </defs>
+  <path id="Эллипс_3" data-name="Эллипс 3" class="cls-1" d="M275,2309a32,32,0,0,1,0-64c0.013,1.53.016,2.23,0,3a29,29,0,0,0,0,58C275.016,2306.72,274.986,2307.81,275,2309Z" transform="translate(-243 -2245)"/>
+  <path id="Прямоугольник_81" data-name="Прямоугольник 81" class="cls-2" d="M273.5,2288.94a2.53,2.53,0,1,1-2.5,2.53A2.513,2.513,0,0,1,273.5,2288.94ZM271,2261h5l-1.25,22.85h-2.5Z" transform="translate(-243 -2245)"/>
+</svg>

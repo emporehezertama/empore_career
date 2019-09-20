@@ -1,0 +1,364 @@
+/**/
+.present-header.dedicated-webdev-center{
+	background: url("../../../images/header-bg/dedicated-webdev.jpg") center center / cover no-repeat #5e626b;
+}
+
+.xb-dedicated-webdev-center .header-bg-before-load{
+	background: url("../../../images/header-bg/dedicated-webdev-mini.png") center center / cover no-repeat #5e626b;
+}
+
+@media screen and (max-width: 1024px){
+	.present-header.dedicated-webdev-center{
+		background: url("../../../images/header-bg/dedicated-webdev-1024.jpg") right center / cover no-repeat #5e626b;
+	}
+
+	.xb-dedicated-webdev-center .header-bg-before-load{
+		background: url("../../../images/header-bg/dedicated-webdev-1024-mini.png") right center / cover no-repeat #5e626b;
+	}
+}
+/**/
+
+.dedicated-webdev-team-info{
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.dedicated-webdev-team-info__col{
+	padding-left: 20px;
+}
+
+.dedicated-webdev-team-info__col:first-child{
+	padding-left: 0;
+	padding-right: 20px;
+}
+
+.dedicated-webdev-team-info__col img{
+	max-width: 100%;
+}
+
+.hire-developers{
+	position: relative;
+
+	height: 100%;
+
+	padding-bottom: 76px;
+
+	box-sizing: border-box;
+	background: #fff;
+}
+
+.hire-developers__pict{
+	height: 110px;
+	font-size: 0;
+	text-align: center;
+}
+
+.hire-developers__pict:before{
+	content: "";
+
+	display: inline-block;
+	vertical-align: middle;
+
+	height: 100%;
+}
+
+.hire-developers__img{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.hire-developers__content{
+	color: #546a75;
+	font-size: 15px;
+
+	padding: 0 10px 25px 20px;
+}
+
+.hire-developers__footer{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+	width: 100%;
+}
+
+.hire-developers__link{
+	display: block;
+
+	color: #fff;
+	font-size: 0;
+	text-decoration: none;
+	text-align: center;
+
+	height: 76px;
+
+	background: #2fa59a;
+
+	transition: background 0.15s ease-in-out;
+}
+
+.hire-developers__link:before{
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+
+.hire-developers__link:hover{
+	background: #1ed4c3;
+}
+
+.hire-developers__link-label{
+	display: inline-block;
+	vertical-align: middle;
+
+	font: normal 18px "Roboto Medium", Arial, Tahoma, Verdana;
+	line-height: 1.444;
+}
+
+.developers-comparison{
+	line-height: normal;
+
+	padding: 0 65px;
+}
+
+.developers-comparison__body{
+	margin-top: 35px;
+	overflow: hidden;
+}
+
+.developers-comparison__row{
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	padding-top: 35px;
+}
+
+.developers-comparison__row:first-child{
+	padding-top: 0;
+}
+
+.developers-comparison__row.body{
+	position: relative;
+}
+
+.developers-comparison__row.body:before{
+	content: "";
+
+	width: 1px;
+	height: 300px;
+	background: #ebebeb;
+
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+
+	z-index: 0;
+}
+
+.developers-comparison__row.body:last-child:before{
+	bottom: calc(100% - 35px);
+}
+
+.developers-comparison__col-content{
+	width: 35%;
+}
+
+.developers-comparison__col-title{
+	position: relative;
+	width: 36%;
+	z-index: 10;
+}
+
+.developers-comparison__head{
+	text-align: center;
+}
+
+.developers-comparison__head-pict{
+	padding-bottom: 20px;
+}
+
+.developers-comparison__head-title{
+	color: #1d1f20;
+	font-size: 26px;
+}
+
+.developers-comparison__vs{
+	color: #9accc8;
+	font: normal 98px "Roboto Medium", Arial, Tahoma, Verdana;
+	line-height: 72px;
+	text-transform: uppercase;
+
+	padding-top: 25px;
+}
+
+.developers-comparison__title{
+	position: relative;
+
+	width: 190px;
+	margin: 0 auto;
+	padding: 6px 10px 8px;
+
+	color: #555555;
+	font: normal 18px "Roboto Medium", Arial, Tahoma, Verdana;
+	text-align: center;
+
+	border: 1px solid #ebebeb;
+	background: #fff;
+	box-sizing: border-box;
+}
+
+.developers-comparison__title:before,
+.developers-comparison__title:after{
+	content: "";
+
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+}
+
+.developers-comparison__title:before{
+	left: -55px;
+
+	border-top: 10px solid transparent;
+	border-right: 16px solid #9accc8;
+	border-bottom: 10px solid transparent;
+}
+
+.developers-comparison__title:after{
+	right: -55px;
+
+	border-top: 10px solid transparent;
+	border-left: 16px solid #ccc;
+	border-bottom: 10px solid transparent;
+}
+
+.developers-comparison__content{
+	color: #555;
+	font-size: 15px;
+
+	padding-top: 10px;
+}
+
+.dev-process{
+	background: #ececec;
+}
+
+.dev-process__title{
+	color: #6ab0a9;
+	font: 700 36px "Roboto Medium", Arial;
+	text-align: center;
+}
+
+@media screen and (max-width: 1024px){
+	.developers-comparison{
+		padding: 0;
+	}
+
+	.hire-developers{
+		padding-bottom: 54px;
+	}
+
+	.hire-developers__pict{
+		height: 70px;
+	}
+
+	.hire-developers__img{
+		max-height: 46px;
+	}
+
+	.hire-developers__content{
+		font-size: 14px;
+		padding: 0 10px 10px 15px;
+	}
+
+	.hire-developers__link{
+		height: 54px;
+	}
+
+	.hire-developers__link-label{
+		font-size: 16px;
+	}
+
+	.developers-comparison__title:before{
+		left: -30px;
+	}
+
+	.developers-comparison__title:after{
+		right: -30px;
+	}
+
+	.dev-process{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 960px){
+	.developers-comparison__vs{
+		font-size: 60px;
+	}
+
+	.developers-comparison__head-title{
+		font-size: 20px;
+	}
+
+	.developers-comparison__title{
+		font-size: 16px;
+	}
+
+	.developers-comparison__row{
+		padding-top: 20px;
+	}
+}
+
+@media screen and (max-width: 880px){
+	.developers-comparison__head-pict{
+		padding-bottom: 5px;
+	}
+
+	.developers-comparison__head-title{
+		font-size: 18px;
+	}
+
+	.developers-comparison__content{
+		padding-top: 0;
+	}
+}
+
+@media screen and (max-width: 770px){
+	.developers-comparison__col-title{
+		width: 30%;
+	}
+
+	.developers-comparison__title{
+		font-size: 13px;
+		width: 125px;
+	}
+
+	.developers-comparison__title:before,
+	.developers-comparison__title:after{
+		margin-top: -6px;
+	}
+
+	.developers-comparison__title:before{
+		left: -15px;
+		border-width: 5px 8px 5px 0;
+	}
+
+	.developers-comparison__title:after{
+		right: -15px;
+		border-width: 5px 0 5px 8px;
+	}
+}
+
+@media screen and (max-width: 600px){
+
+}

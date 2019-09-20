@@ -1,0 +1,398 @@
+html{
+    scroll-behavior: smooth;
+ }
+
+ .list-pointer{
+    width: 10px; 
+    height: 10px; 
+    border-radius: 10px; 
+    display: inline-block; 
+    margin-right: 10px;
+ }
+
+ .menu-nav{
+    color: black;
+ }
+
+ .div3{
+    background-color: #EBEBEB; 
+    height: 100vh;
+    padding-top: 25vh;
+    overflow: hidden;
+}
+
+.div4{
+    background-color: #DCDDDD; 
+    height: 100vh;
+    padding-top: 25vh;
+    overflow: hidden;
+}
+
+ 
+
+
+ @media screen and (min-width: 1280px){
+    
+    .div1{
+       overflow: hidden;
+       height: 100vh;
+    }
+
+    .div1-child{
+       width: 50%;
+       margin-top: 15%; 
+    }
+
+    .image-div{
+      width:390px;
+      padding-right: 20px;
+   }
+
+    .welcome-to{
+       font-family: Trebuchet MS; 
+       line-height: 20px;
+       font-size: 31px;
+       font-weight: 900;
+    }
+    .empore-zone{
+       font-family: Arial; 
+       color: #0E9A88; 
+       font-weight: 900; 
+       font-size: 42px; 
+    }
+
+    .let-us{
+        font-family: Trebuchet MS; 
+        line-height: 20px;
+        font-weight: 900;
+        font-size: 30px; 
+     }
+
+    .please{
+        font-family: Trebuchet MS; 
+        font-size: 15px;
+        font-weight: 900; 
+     }
+
+    
+    .div2{
+        background-color: #DCDDDD; 
+        height: 100vh;
+        padding-top: 25vh;
+        overflow: hidden;
+    }
+
+    .div2-child{
+        width: 50%;
+    }
+
+    .our-commitment{
+       font-family: Arial; 
+       color: #0E9A88; 
+       font-weight: 700; 
+       font-size: 42px;
+    }
+
+    .to-help{
+        font-family: Trebuchet MS; 
+        font-size: 17px; 
+        padding-left: 5px;
+    }
+
+    .ul-list{
+        padding-left: 15px; 
+        list-style-type: none; 
+        line-height: 30px;
+     }
+    .link-list{
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+     }
+    
+ }
+
+ @media screen and (min-width: 960px) and (max-width: 1279px){
+    
+    .div1{
+       overflow: hidden;
+       height:  50vh;
+    }
+    .div1-child{
+       width: 50%;
+       margin-top: 10%; 
+    }
+
+    .image-div{
+        width:320px;
+        float: right;
+     }
+
+    .welcome-to{
+       font-family: Trebuchet MS; 
+       line-height: 20px;
+       font-size: 31px;
+       font-weight: 900;
+    }
+    .empore-zone{
+       font-family: Arial; 
+       color: #0E9A88; 
+       font-weight: 900; 
+       font-size: 42px; 
+    }
+
+    .let-us{
+        font-family: Trebuchet MS; 
+        line-height: 20px;
+        font-weight: 900;
+        font-size: 30px; 
+     }
+
+    .please{
+        font-family: Trebuchet MS; 
+        font-size: 15px;
+        font-weight: 900; 
+     }
+
+     .div2{
+        background-color: #DCDDDD; 
+        height: 45vh;
+        padding-top: 15vh;
+        overflow: hidden;
+    }
+    .div2-child{
+        width: 50%;
+    }
+
+    .our-commitment{
+        font-family: Arial; 
+        color: #0E9A88; 
+        font-weight: 700; 
+        font-size: 42px;
+     }
+ 
+     .to-help{
+         font-family: Trebuchet MS; 
+         font-size: 17px; 
+         padding-left: 5px;
+     }
+ 
+     .ul-list{
+        padding-left: 15px; 
+        list-style-type: none; 
+        line-height: 30px;
+     }
+     .link-list{
+         text-decoration: none;
+         color: black;
+         font-size: 16px;
+      }
+
+ }
+
+ @media screen and (min-width: 720px) and (max-width: 959px){
+    
+    .div1{
+       overflow: hidden;
+       height:  50vh;
+    }
+    .div1-child{
+       width: 50%;
+       margin-top: 8%;
+    }
+
+    .image-div{
+        width:320px;
+        float: right;
+     }
+    .welcome-to{
+       font-family: Trebuchet MS; 
+       line-height: 20px;
+       font-size: 31px;
+       font-weight: 900;
+    }
+    .empore-zone{
+       font-family: Arial; 
+       color: #0E9A88; 
+       font-weight: 900; 
+       font-size: 42px; 
+    }
+    
+    .let-us{
+       font-family: Trebuchet MS; 
+       line-height: 20px;
+    }
+
+    .div2{
+        background-color: #DCDDDD; 
+        height: 50vh;
+        padding-top: 12vh;
+        overflow: hidden;
+    }
+
+    .div2-child{
+        width: 50%;
+    }
+
+    .our-commitment{
+        font-family: Arial; 
+        color: #0E9A88; 
+        font-weight: 700; 
+        font-size: 32px;
+     }
+ 
+     .to-help{
+         font-family: Trebuchet MS; 
+         font-size: 17px; 
+         padding-left: 5px;
+     }
+ 
+     .ul-list{
+        padding-left: 15px; 
+        list-style-type: none; 
+        line-height: 30px;
+     }
+     .link-list{
+         text-decoration: none;
+         color: black;
+         font-size: 16px;
+      }
+
+ }
+
+ @media screen and (min-width: 360px) and (max-width: 719px){
+    
+    .div1{ 
+        overflow: hidden;
+        height:  75vh;
+     }
+ 
+     .div1-child{
+        width: 8  0%;
+        margin-top: 10%;
+        margin-left : 15px;
+        margin-right : 15px;
+     }
+     
+     .image-div{
+        width: 80%;
+        margin: auto;
+     }
+ 
+     .welcome-to{
+        font-family: Trebuchet MS;
+        font-size: 20px;
+        font-weight: 900;
+     }
+     .empore-zone{
+        font-family: Arial; 
+        color: #0E9A88; 
+        font-weight: 900; 
+        font-size: 25px; 
+     }
+     .let-us{
+        font-family: Trebuchet MS; 
+        line-height: 20px;
+        font-size: 20px;
+     }
+     .please{
+        font-family: Trebuchet MS; 
+        font-size: 13px;
+        font-weight: 900; 
+     }
+ 
+    .div2{
+        background-color: #DCDDDD; 
+        height: 40vh;
+        padding-top: 10vh;
+        overflow: hidden;
+    }
+
+    .div2-child{
+        width: 100%;
+    }
+
+
+    .our-commitment{
+        font-family: Arial; 
+        color: #0E9A88; 
+        font-weight: 700; 
+        font-size: 20px;
+     }
+ 
+     .to-help{
+         font-family: Trebuchet MS; 
+         font-size: 9px; 
+         padding-left: 5px;
+     }
+
+     .ul-list{
+        padding-left: 15px; 
+        list-style-type: none; 
+        line-height: 20px;
+     }
+ 
+     .link-list{
+         text-decoration: none;
+         color: black;
+         font-size: 7px;
+      }
+ }
+
+ @media screen and (max-width: 359px){
+    .div1{
+       overflow: hidden;
+       height:  75vh;
+    }
+
+    .div1-child{
+       width: 100%;
+       margin: 5% 5%;
+    }
+    
+    .image-div{
+       width: 280px;
+       float: left;
+    }
+
+    .welcome-to{
+       font-family: Trebuchet MS;
+       font-size: 20px;
+       font-weight: 900;
+    }
+    .empore-zone{
+       font-family: Arial; 
+       color: #0E9A88; 
+       font-weight: 900; 
+       font-size: 25px; 
+    }
+    .let-us{
+       font-family: Trebuchet MS; 
+       line-height: 20px;
+       font-size: 20px;
+    }
+    .please{
+       font-family: Trebuchet MS; 
+       font-size: 13px;
+       font-weight: 900; 
+    }
+
+    .our-commitment{
+        font-family: Arial; 
+        color: #0E9A88; 
+        font-weight: 700; 
+        font-size: 42px;
+     }
+ 
+     .to-help{
+         font-family: Trebuchet MS; 
+         font-size: 17px; 
+         padding-left: 5px;
+     }
+ 
+     .link-list{
+         text-decoration: none;
+         color: black;
+         font-size: 16px;
+      }
+ }
