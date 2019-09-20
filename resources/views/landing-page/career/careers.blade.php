@@ -71,7 +71,11 @@
 
                            <div class="xb-row">
                               <div class="xb-col-12">
+<<<<<<< HEAD
                                  <h2>Showing {{$data->lastItem()}} out of {{$data->total()}} total vacancy</h2>
+=======
+                                 <h2>Showing {{$data->lastItem()}} out of {{$data->total()}} total</h2>
+>>>>>>> 59d8442487a7f19d975d72d9b1d8a10a41c25f72
                               </div>
                            </div>
                            <br>

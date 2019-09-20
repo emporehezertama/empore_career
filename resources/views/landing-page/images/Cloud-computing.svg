@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -10,3 +11,17 @@
 	c-9.4-0.2-17-7.9-17-17.4c0-9.6,7.7-17.3,17.1-17.4C54.1,21.6,54,21,54,20.5c0-5.2,4.3-9.5,9.5-9.5c1.2,0,2.3,0.2,3.4,0.6
 	C70.3,4.7,77.4,0,85.6,0c11.6,0,20.9,9.4,20.9,21c0,0.5,0,1-0.1,1.5C114.2,24.3,120,31.2,120,39.5z"/>
 </svg>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="120px" height="67px" viewBox="0 0 120 67" enable-background="new 0 0 120 67" xml:space="preserve">
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#F192A7" d="M35,39.5C35,50.3,43.5,59,54,59c0,0,0,0,0,0v0h40.8
+	c-2.8,4.8-7.9,8-13.8,8v0H16v0C7.1,66.7,0,59.4,0,50.5C0,41.4,7.3,34.1,16.4,34C18.5,21,30.1,11,44,11c3.8,0,7.4,0.7,10.7,2.1
+	c-1.6,1.9-2.6,4.3-2.7,7C42.5,21.1,35,29.4,35,39.5z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#54A0D3" d="M120,39.5c0,9.6-7.8,17.5-17.4,17.5c-0.1,0-0.2,0-0.4,0v0H54v0
+	c-9.4-0.2-17-7.9-17-17.4c0-9.6,7.7-17.3,17.1-17.4C54.1,21.6,54,21,54,20.5c0-5.2,4.3-9.5,9.5-9.5c1.2,0,2.3,0.2,3.4,0.6
+	C70.3,4.7,77.4,0,85.6,0c11.6,0,20.9,9.4,20.9,21c0,0.5,0,1-0.1,1.5C114.2,24.3,120,31.2,120,39.5z"/>
+</svg>
+>>>>>>> 59d8442487a7f19d975d72d9b1d8a10a41c25f72

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -10,3 +11,17 @@
 	v17.8C2,20.4,2,21,2.3,21h15.1c0.4,0,0.6-0.6,0.6-0.9V2.3z M23,6.5C23,6.2,23,6,22.7,6H20v16.2c0,0.7-0.7,0.8-1.4,0.8H7v1.7
 	C7,25.1,7.5,25,7.8,25h14.8c0.4,0,0.3,0.1,0.3-0.3V6.5z M5,15h10v2H5V15z M5,10h10v2H5V10z M5,5h10v2H5V5z"/>
 </svg>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="25px" height="27px" viewBox="0 0 25 27" style="enable-background:new 0 0 25 27;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#C75A7E;}
+</style>
+<path id="path-1" class="st0" d="M23.8,27H6.4C5.7,27,5,26.6,5,25.9V23H1.2C0.4,23,0,22.9,0,22.2v-21C0,0.4,0.4,0,1.2,0h17.4
+	C19.3,0,20,0.4,20,1.1V4h3.8C24.6,4,25,4.4,25,5.1v20.7C25,26.6,24.6,27,23.8,27z M18,2.3C18,1.9,17.8,2,17.4,2H2.3C2,2,2,1.9,2,2.3
+	v17.8C2,20.4,2,21,2.3,21h15.1c0.4,0,0.6-0.6,0.6-0.9V2.3z M23,6.5C23,6.2,23,6,22.7,6H20v16.2c0,0.7-0.7,0.8-1.4,0.8H7v1.7
+	C7,25.1,7.5,25,7.8,25h14.8c0.4,0,0.3,0.1,0.3-0.3V6.5z M5,15h10v2H5V15z M5,10h10v2H5V10z M5,5h10v2H5V5z"/>
+</svg>
+>>>>>>> 59d8442487a7f19d975d72d9b1d8a10a41c25f72

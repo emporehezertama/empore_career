@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.administrator')
 
 @section('title', 'Job Vacancy')
@@ -57,3 +58,64 @@
     @include('layouts.footer')
 </div>
 @endsection
+=======
+@extends('layouts.administrator')
+
+@section('title', 'Job Vacancy')
+
+@section('content')
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row bg-title">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Manage Job List</h4> 
+            </div>
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <a href="{{ route('administrator.job-list.create') }}" class="btn btn-success btn-sm pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light"> <i class="fa fa-plus"></i> ADD JOBS</a>
+                <ol class="breadcrumb">
+                    <li><a href="javascript:void(0)">Dashboard</a></li>
+                    <li class="active">Job List</li>
+                </ol>
+            </div>
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-12 p-l-0 p-r-0">
+                <div class="white-box">
+                    <div class="table-responsive">
+                        <table id="data_table_no_pagging" class="display nowrap" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th width="70" class="text-center">#</th>
+                                    <th>JOB TITLE</th>
+                                    <th>#</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach($data as $no => $item)
+                                <tr>
+                                    <td>{{ $no+1 }}</td>
+                                    <td>{{ $item->job_title }}</td>
+                                    <td>
+                                        <a href="{{ route('administrator.job-list.edit', ['id' => $item->id]) }}" style="float: left; margin-right:5px"> <button class="btn btn-info btn-xs m-r-5"><i class="fa fa-edit"></i> edit </button></a>
+                                            <form action="{{ route('administrator.job-list.destroy', $item->id) }}" onsubmit="return confirm('Delete this data?')" method="post" style="margin-left: 5px;">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}                                               
+                                                <button type="submit" class="btn btn-danger btn-xs m-r-5"><i class="ti-trash"></i> delete </button>
+                                            </form>
+                                    </td>
+                                </tr>
+                                @endforeach 
+                            </tbody>
+                        </table>
+                        <div class="col-m-6 pull-left text-left">Showing {{ $data->firstItem() }} to {{ $data->lastItem() }} of {{ $data->total() }} entries</div>
+                        <div class="col-md-6 pull-right text-right">{{ $data->appends($_GET)->render() }}</div><div class="clearfix"></div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    @include('layouts.footer')
+</div>
+@endsection
+>>>>>>> 59d8442487a7f19d975d72d9b1d8a10a41c25f72

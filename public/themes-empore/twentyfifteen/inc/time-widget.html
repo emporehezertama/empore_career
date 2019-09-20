@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 <!DOCTYPE html>
@@ -782,3 +783,789 @@
 <!-- Mirrored from xbsoftware.com/wp-content/themes/twentyfifteen/inc/time-widget.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Jan 2019 13:44:39 GMT -->
 </html>
 
+=======
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from xbsoftware.com/wp-content/themes/twentyfifteen/inc/time-widget.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Jan 2019 13:44:38 GMT -->
+<head>
+    <meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+    <title>Time Widget</title>
+</head>
+
+<style>
+    .xb-clock-w-hour-row li {
+        display: list-item;
+        text-align: center;
+        list-style-type: none;
+        color: #5b5b5b;
+        width: 30px;
+        height: 35px;
+        float: left;
+        margin-top: 0;
+        margin-right: 0;
+        position: relative;
+        border-top: 1px solid #5b5b5b;
+        border-bottom: 1px solid #5b5b5b;
+        box-sizing: border-box;
+    }
+
+    .xb-clock-w-hour-row li b {
+        position: relative;
+        top: 3px;
+        left: 1px;
+        font-size: 140%;
+        line-height: 22px;
+        font-weight: normal;
+    }
+
+    .xb-clock-w-hour-row li .xb-clock-w-big_index{
+        top: 7px;
+        font-size: 120%;
+        line-height: 22px;
+        font-weight: normal;
+    }
+
+    .xb-clock-w-hour-row li u{
+        font-size: 70%;
+        display: block;
+        width: auto;
+        text-align: center;
+        text-decoration: none;
+        font-style: normal;
+        position: absolute;
+        left: 5px;
+        right: 3px;
+        bottom: 2px;
+        height: 12px;
+    }
+
+    .xb-clock-w-hour-row .xb-clock-w-start-day b{
+        left: -1px;
+        font-size: 100%;
+    }
+
+    .xb-clock-w-sample-hidden {
+        display: none;
+    }
+
+    #xb-clock-w {
+        font-family: sans-serif;
+        width: 450px;
+        position: relative;
+        border: 5px solid #5b5b5b;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+
+    .xb-clock-w-powered{
+        font-size: 12px;
+        display: inline-block;
+        position: relative;
+        top:-14px;
+    }
+
+    .xb-clock-w-row {
+        width: 100%;
+        display: inline-block;
+        height: 50px;
+        padding-top: 0;
+        padding-bottom: 10px;
+    }
+
+    #xb-clock-w > div:nth-child(2){
+        margin-bottom: 10px;
+    }
+
+    .xb-clock-w-footer {
+        padding-top: 5px;
+        padding-left: 10px;
+        background-color: #5b5b5b;
+        position: relative;
+        color: white;
+    }
+
+    .xb-clock-w-city{
+        display: block;
+        font-size: 18px;
+        max-height: 22px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .xb-clock-w-utc-dif {
+        display: block;
+        font-size: 12px;
+        color: #5b5b5b;
+        opacity: 0.8;
+    }
+
+    #xb-clock-w > div:first-child .xb-clock-w-day-active:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -6px;
+        left: 0;
+        border-top: solid 2px black;
+        border-left: solid 2px black;
+        border-right: solid 2px black;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        width: 28px;
+        height: 50px;
+        padding-bottom: 12px;
+        min-height: 100%;
+        z-index: 10;
+    }
+
+    #xb-clock-w > div:nth-child(2) .xb-clock-w-day-active:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -23px;
+        left: 0;
+        border-bottom: solid 2px black;
+        border-left: solid 2px black;
+        border-right: solid 2px black;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        width: 28px;
+        height: 50px;
+        padding-bottom: 12px;
+        min-height: 100%;
+        z-index: 10;
+    }
+    #xb-clock-w > div:first-child .xb-clock-w-start-day.xb-clock-w-day-active:before {
+        left: -1px;
+    }
+    #xb-clock-w > div:nth-child(2) .xb-clock-w-start-day.xb-clock-w-day-active:before {
+        left: -1px;
+    }
+
+    .xb-clock-w-location, .xb-clock-w-hourline, .xb-clock-w-datetime {
+        display: inline-block;
+        padding: 0;
+    }
+    .xb-clock-w-location{
+        margin-left: 15px;
+        width: 30%;
+
+    }
+    .xb-clock-w-datetime{
+        padding-left: 10px;
+    }
+    .xb-clock-w-hourline{
+        position: absolute;
+        right: 15px;
+    }
+
+    .xb-clock-w-time{
+        font-weight: bold;
+    }
+    .xb-clock-w-time span {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .xb-clock-w-time-separator {
+        margin-left: 2px;
+    }
+    .xb-clock-w-time-minutes,
+    .xb-clock-w-time-seconds {
+        margin-left: -2px;
+    }
+
+    .xb-clock-w-date{
+        font-size: 12px;
+        color: #5b5b5b;
+    }
+
+    .xb-clock-w-format {
+        display: inline-block;
+        position: absolute;
+        cursor: pointer;
+        margin: 0 10px;
+        font-size: 18px;
+    }
+
+    #xb-clock-w-ap-mp-format{
+        right: 40px;
+        bottom: 5px;
+    }
+
+    #xb-clock-w-twentyfour-hour-format{
+        right: 0px;
+        bottom: 5px;
+    }
+
+
+    .xb-clock-w-logo{
+        background: url("../images/xb-logo.svg") no-repeat center center;
+        background-size: contain;
+        display: inline-block;
+        width: 100px;
+        height: 35px;
+        text-decoration: none;
+        cursor: pointer;
+        overflow: hidden;
+        margin-left: 5px;
+    }
+
+    .xb-clock-w-selected-format {
+        background-color: rgba(255, 255, 255, .8);
+        padding: 3px 3px 0;
+        border-radius: 2px;
+        border-bottom: 2px solid #e4264f;
+        color: #5b5b5b;
+    }
+
+    .xb-clock-w-day-active {
+        color: #e4264f;
+    }
+
+    .xb-clock-w-start-day {
+        width: 29px;
+        background-color: grey;
+        color: white;
+        border-left: 1px solid black;
+        border-top-left-radius: 20%;
+        border-bottom-left-radius: 20%;
+    }
+
+    .xb-clock-w-end-day {
+        background-color: #B6B9BA;
+        width: 29px;
+        color: white;
+        border-right: 1px solid black;
+        border-top-right-radius: 20%;
+        border-bottom-right-radius: 20%;
+    }
+
+    @media (max-width: 460px) {
+        #xb-clock-w {
+            width: 280px;
+        }
+        .xb-clock-w-hourline {
+            display: none;
+        }
+        .xb-clock-w-logo {
+            width: 41px;
+            background-size: auto 100%;
+            background-position: 0 0;
+        }
+    }
+
+</style>
+
+<body>
+
+<div id="xb-clock-w">
+    <div id="xb-clock-w-sample" class="xb-clock-w-sample-hidden">
+        <div class="xb-clock-w-row">
+            <h2 class="xb-clock-w-location">
+                <span class="xb-clock-w-city"></span>
+                <span class="xb-clock-w-utc-dif"></span>
+            </h2>
+            <div class="xb-clock-w-datetime">
+                <div class="xb-clock-w-time">
+                    <span class="xb-clock-w-time-hours"></span><span class="xb-clock-w-time-separator">:</span>
+                    <span class="xb-clock-w-time-minutes"></span><span class="xb-clock-w-time-separator">:</span>
+                    <span class="xb-clock-w-time-seconds"></span> <span class="xb-clock-w-time-ampm"></span>
+                </div>
+                <div class="xb-clock-w-date"></div>
+            </div>
+            <div class="xb-clock-w-hourline">
+                <ul class="xb-clock-w-hour-row"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="xb-clock-w-footer">
+            <span class="xb-clock-w-powered">Powered by</span>
+            <a href="../../../../index.html" class="xb-clock-w-logo" target="_top" title="XB Software"></a>
+            <span id="xb-clock-w-twentyfour-hour-format" title="Switch to 24-hour format" class="xb-clock-w-format" format="24">24</span>
+            <span id="xb-clock-w-ap-mp-format" title="Switch to AM/PM format" class="xb-clock-w-format xb-clock-w-selected-format" format="ampm">AM/PM</span>
+    </div>  
+</div>
+
+<script>
+    (function () {
+        var parentNodeId = "xb-clock-w";
+
+        var tickInterval = null,
+                ampm = true,
+                minutesToMilisecondDelta = 60 * 1000,
+                millisecondsInHour = 1000 * 60 * 60,
+                config = [
+//                    {name: "UTC time", offset: false, offsetName: "UTC"},
+                    {name: "Minsk time", offset: true, offsetName: "Minsk", summerOffset: -180, winterOffset: -180},
+                    {name: "Your time", offset: true}
+                ];
+
+
+        var convertor = function () {
+            var meridianName = "UTC", //"GMT"
+                    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], // ["January", "February", "March", "April, ..."]
+                    days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; // ["Sunday", "Monday", "Tuesday", ... ]
+            var amName = "am", //"AM"
+                    pmName = "pm"; //"PM"
+
+            function convertOffset(mins) {
+                var sign = mins <= 0 ? "+" : "-";
+                mins = Math.abs(mins);
+                var minutes = mins % 60;
+                var hours = Math.floor(mins / 60);
+                return meridianName + sign + hours + (parseInt(minutes) > 0 ? ':' + minutes : '');
+            }
+
+            function convertMonth(month) {
+                return months[month] || month;
+            }
+
+            function convertDay(day) {
+                return days[day] || day;
+            }
+
+            function convertHours(hours) {
+                if (ampm) {
+                    hours = hours % 12;
+                    hours = hours ? hours : 12; // the hour '0' should be '12'
+                } else {
+                    hours = _getZeroLeadFormat(hours);
+                }
+                return hours;
+            }
+
+            function convertMinutes(mins) {
+                return _getZeroLeadFormat(mins);
+            }
+
+            function convertSeconds(seconds) {
+                return _getZeroLeadFormat(seconds);
+            }
+
+            function getAMPM(hours) {
+                return hours > 12 && hours <= 23 ? pmName : amName;
+            }
+
+            function _getZeroLeadFormat(value) {
+                if (!value) {
+                    return "00";
+                } else if (value && value < 10) {
+                    return "0" + value;
+                } else return value;
+            }
+
+            return {
+                convertOffset: convertOffset,
+                convertMonth: convertMonth,
+                convertDay: convertDay,
+                convertHours: convertHours,
+                convertMinutes: convertMinutes,
+                convertSeconds: convertSeconds,
+                getAMPM: getAMPM
+            };
+        }();
+
+        var dom = function () {
+
+            var sampleNodeId = parentNodeId +"-sample",
+                    cityClassName = parentNodeId +"-city",
+                    dateClassName = parentNodeId +"-date",
+                    utcDiffClassName = parentNodeId +"-utc-dif",
+                    hoursClassName = parentNodeId +"-time-hours",
+                    minutesClassName = parentNodeId +"-time-minutes",
+                    secondsClassName = parentNodeId +"-time-seconds",
+                    ampmClassName = parentNodeId +"-time-ampm",
+                    hourRowClassName = parentNodeId +"-hour-row",
+                    dayCellActiveClassName = parentNodeId +"-day-active",
+                    startDayCellClassName = parentNodeId +"-start-day",
+                    endDayCellClassName = parentNodeId +"-end-day";
+
+            function _getSampleNode() {
+                return document.getElementById(sampleNodeId);
+            }
+
+            function _getParentNode() {
+                return document.getElementById(parentNodeId);
+            }
+
+            function createClockRow(id) {
+                var sampleNode = _getSampleNode(),
+                        newRow = sampleNode.cloneNode(true);
+                if (newRow) {
+                    newRow.id = +new Date() + Math.floor(Math.random() * 1000000);
+                    newRow.className = "";
+                    _getParentNode().insertBefore(newRow, sampleNode);
+                    return newRow.id;
+                }
+                return null;
+            }
+
+            function updateWholeClockDom(parentEl, cfg) {
+                if (!parentEl) return false;
+
+                //update row label aka location/zone/city
+                updateName(parentEl, cfg.name);
+                //update utc difference
+                updateUTCDiff(parentEl, cfg.offset);
+                //update row label aka location/zone/city
+                updateDate(parentEl, cfg);
+                //update hours
+                updateHours(parentEl, cfg.hours);
+                //update minutes
+                updateMinutes(parentEl, cfg.minutes);
+                //update seconds
+                updateSeconds(parentEl, cfg.seconds);
+                //update ampm
+                updateAMPM(parentEl, cfg.ampm);
+                //update hourline
+                updateHourLine(parentEl, cfg);
+            }
+
+            function updateName(element, value) {
+                _setValue(element.querySelector("." + cityClassName), value);
+            }
+
+            function updateUTCDiff(element, value) {
+                _setValue(element.querySelector("." + utcDiffClassName), value);
+            }
+
+            function updateDate(element, data) {
+                _setValue(element.querySelector("." + dateClassName), data.day + ", " + data.month + " " + data.date);
+            }
+
+            function updateHours(element, value) {
+                _setValue(element.querySelector("." + hoursClassName), value);
+            }
+
+            function updateMinutes(element, value) {
+                _setValue(element.querySelector("." + minutesClassName), value);
+            }
+
+            function updateSeconds(element, value) {
+                _setValue(element.querySelector("." + secondsClassName), value);
+            }
+
+            function updateAMPM(element, value) {
+                _setValue(element.querySelector("." + ampmClassName), value);
+            }
+
+            function _renderHourCell(value, sign, active, className) {
+                className = className || "";
+                var cell = document.createElement("li");
+                var b;
+                if(sign){
+                    b = document.createElement("b");
+                    _setValue(b, value);
+                    cell.appendChild(b);
+                    var u = document.createElement("u");
+                    _setValue(u, sign);
+                    cell.appendChild(u);
+                } else{
+                    b = document.createElement("b");
+                    _setValue(b, value);
+                    b.setAttribute('class', parentNodeId +'-big_index');
+                    cell.appendChild(b);
+                }
+
+
+                cell.className = active ? className + " " + dayCellActiveClassName : className;
+//                _setValue(cell, value);
+                //cell.setAttribute('attrName', value) - just for any case
+                return cell;
+            }
+
+            //todo: update lines  text am/pm/24 according to global 'apmp' flag
+            function updateHourLine(element, data) {
+                var row = element.querySelector("." + hourRowClassName);
+                if (!row) {
+                    return false;
+                }
+                //else
+                _clearElement(row);
+
+                var counter = -1,
+                        hours,
+                        month,
+                        date,
+                        cell = null,
+                        value = null,
+                        sign = null,
+                        className = "",
+                        active = false,
+                        time_stamp = 0,
+                        d = new Date(data.original);
+
+                while (counter < 4) {
+                    value = "";
+                    sign = "";
+                    className = "";
+                    active = counter === 0,
+                            time_stamp = calendar.getUTCTimestamp(d);
+                    time_stamp += counter * millisecondsInHour;
+                    iterationDate = new Date(time_stamp);
+
+                    hours = iterationDate.getUTCHours();
+                    month = iterationDate.getUTCMonth();
+                    date = iterationDate.getUTCDate();
+
+                    if (parseInt(hours) === 0) {
+                        value += convertor.convertMonth(month);
+                        sign += date;
+                        className = startDayCellClassName;
+                    } else {
+                        if (parseInt(hours) === 23) {
+                            className = endDayCellClassName;
+                        }
+                        value +=convertor.convertHours(hours);
+                        sign += ampm ? convertor.getAMPM(hours) : "";
+                    }
+                    cell = _renderHourCell(value, sign, active, className);
+
+                    if (cell) {
+                        row.appendChild(cell);
+                    }
+                    row.appendChild(cell);
+                    counter++;
+                }
+
+            }
+
+            function _clearElement(element) {
+                while (element.firstChild) {
+                    element.removeChild(element.firstChild);
+                }
+                return true;
+            }
+
+            function _setValue(element, value) {
+                var textNode = document.createTextNode(value ? value : "");
+                if (!element.childNodes.length) {
+                    element.appendChild(textNode);
+                } else {
+                    element.childNodes[0].nodeValue = value || "";
+                }
+            }
+
+            return {
+                createClockRow: createClockRow,
+                updateWholeClockDom: updateWholeClockDom,
+                updateName: updateName,
+                updateUTCDiff: updateUTCDiff,
+                updateDate: updateDate,
+                updateHours: updateHours,
+                updateMinutes: updateMinutes,
+                updateSeconds: updateSeconds,
+                updateAMPM: updateAMPM,
+                updateHourLine: updateHourLine
+            };
+        }();
+
+        var ampmControl = (function () {
+            var fullHourFormatId = parentNodeId +"-twentyfour-hour-format",
+                    ampmFormatId = parentNodeId +"-ap-mp-format",
+                    selectedFormatClassName = parentNodeId +"-selected-format",
+                    defaultFormatClassName = parentNodeId +"-format";
+
+            function _getfullHourFormatNode() {
+                return document.getElementById(fullHourFormatId);
+            }
+
+            function _getAmpmFormatNode() {
+                return document.getElementById(ampmFormatId);
+            }
+
+            function _setActiveFormat(event) {
+                var element = event ? (event.target ? event.target : event.srcElement) : null;
+                if (!element) return;
+
+                //else
+                var format = element.getAttribute("format");
+                //update global flag
+                ampm = format === "24" ? false : true;
+                element.className = parentNodeId +"-format "+parentNodeId+"-selected-format";
+
+                var siblingElement = element.nextElementSibling || element.previousElementSibling;
+                siblingElement.className = parentNodeId +"-format";
+            }
+
+            function _addEvents() {
+                var fullHourFormatNode = _getfullHourFormatNode(),
+                        ampmFormatNode = _getAmpmFormatNode();
+
+                //add click handler to 24 hour format element
+                if (fullHourFormatNode.addEventListener) {
+                    fullHourFormatNode.addEventListener("click", _setActiveFormat, false);
+                } else {
+                    fullHourFormatNode.attachEvent("onclick", function () {
+                        return (_setActiveFormat.call(fullHourFormatNode, window.event));
+                    });
+                }
+                //add click handler to amp/pm format element
+                if (ampmFormatNode.addEventListener) {
+                    ampmFormatNode.addEventListener("click", _setActiveFormat, false);
+                } else {
+                    ampmFormatNode.attachEvent("onclick", function () {
+                        return (_setActiveFormat.call(ampmFormatNode, window.event));
+                    });
+                }
+            }
+
+            function init() {
+                _addEvents();
+            }
+
+            return {
+                init: init
+            };
+        })();
+
+        var calendar = (function () {
+            function getLastSundayOfMonth(now, month) {
+                var date = new Date(now),
+                        year = now.getFullYear(),
+                        lastDay = [
+                            31,
+                            0 === year % 4 && 0 !== year % 100 || 0 === year % 400 ? 29 : 28,
+                            31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+                        ];
+
+                date.setFullYear(year, month, lastDay[month]);
+                date.setDate(date.getDate() - date.getDay());
+                date.setHours(0);
+                date.setMinutes(0);
+                date.setSeconds(0);
+                date.setMilliseconds(0);
+                return date;
+            }
+
+            function getUTCTimestamp(date) {
+                return Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds(), date.getUTCMilliseconds());
+            }
+
+            return {
+                getLastSundayOfMonth: getLastSundayOfMonth,
+                getUTCTimestamp: getUTCTimestamp
+            }
+        })();
+
+
+        function updateClockRow(locale, cfg) {
+            var rowNode = document.getElementById(locale.domId);
+            if (!locale.cache) {
+                dom.updateWholeClockDom(rowNode, cfg);
+            } else {
+                if (locale.cache.seconds !== cfg.seconds) {
+                    dom.updateSeconds(rowNode, cfg.seconds);
+                }
+                if (locale.cache.minutes !== cfg.minutes) {
+                    dom.updateMinutes(rowNode, cfg.minutes);
+                }
+                if (locale.cache.hours !== cfg.hours || locale.cache.ampm !== cfg.ampm) {
+                    dom.updateHours(rowNode, cfg.hours);
+                }
+                if (locale.cache.offset !== cfg.offset) {
+                    dom.updateUTCDiff(rowNode, cfg.offset);
+                }
+                if (locale.cache.ampm !== cfg.ampm) {
+                    dom.updateAMPM(rowNode, cfg.ampm);
+                }
+                if (locale.cache.ampm !== cfg.ampm || locale.cache.hours !== cfg.hours || locale.cache.date !== cfg.date || locale.cache.month !== cfg.month || locale.cache.year !== cfg.year) {
+                    dom.updateHourLine(rowNode, cfg);
+                    dom.updateDate(rowNode, cfg);
+                }
+            }
+            //update cache
+            locale.cache = cfg;
+        }
+
+        function getLocaleConfig(now, locale) {
+            var offset = getLocaleTimeZoneOffset(now, locale),
+                    d = getLocaleDate(now, offset),
+                    cfg = convertDateProps(d);
+
+            cfg.offset = convertor.convertOffset(offset);
+            cfg.name = locale.name;
+
+            return cfg;
+        }
+
+        function convertDateProps(d) {
+            return {
+                original: new Date(d),
+                year: d.getUTCFullYear(),
+                month: convertor.convertMonth(d.getUTCMonth()),
+                date: d.getUTCDate(),
+                day: convertor.convertDay(d.getUTCDay()),
+                hours: convertor.convertHours(d.getUTCHours()),
+                minutes: convertor.convertMinutes(d.getUTCMinutes()),
+                seconds: convertor.convertSeconds(d.getUTCSeconds()),
+                milliseconds: d.getUTCMilliseconds(),
+                ampm: ampm ? convertor.getAMPM(d.getUTCHours()) : null,
+            }
+        }
+
+        function getLocaleDate(now, offset) {
+            if (offset) {
+                var utc_timestamp = calendar.getUTCTimestamp(now);
+                utc_timestamp -= offset * minutesToMilisecondDelta;
+                return new Date(utc_timestamp);
+            }
+            return now;
+        }
+
+        function getLocaleTimeZoneOffset(now, locale) {
+            switch (locale.offsetName) {
+                case "Minsk":
+                    return getHumanLogicBasedMinskTimeZoneOffset(now, locale) || 0;
+
+                case "UTC":
+                    return 0;
+
+                default:
+                    return now.getTimezoneOffset();
+            }
+        }
+
+        function getHumanLogicBasedMinskTimeZoneOffset(now, locale) {
+            var lastMarchSunday = calendar.getLastSundayOfMonth(now, 2), //2 - March
+                    lastOctoberSunday = calendar.getLastSundayOfMonth(now, 9), //9 - October
+                    isMinskSummerTime = +now >= +lastMarchSunday && now < +lastOctoberSunday;
+
+            return isMinskSummerTime ? locale.summerOffset : locale.winterOffset;
+        }
+
+        function tickClocks() {
+            var now = new Date(),
+                    newId = null,
+                    cfg = {},
+                    res = [];
+            for (var i = 0; i < config.length; i++) {
+                if (!config[i].domId) {
+                    var newId = dom.createClockRow(config[i].domId);
+                    if (newId)
+                        config[i].domId = newId;
+                }
+                cfg = getLocaleConfig(now, config[i]);
+                updateClockRow(config[i], cfg);
+            }
+        }
+
+        function init() {
+            ampmControl.init();
+            //tickClocks(); //for test purposes
+            var tickInterval = setInterval(tickClocks, 1000);
+        }
+
+        init();
+    }());
+
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"3fda083f4c","applicationID":"177176195","transactionName":"YVwANUpWWEBSBxcMV1gWNxNRGEFDHgcMC0xTVxZOTF9TXlYXTBFPU1cWGF5eUEdWAQ1KUVhaTRVRWlMeRA0HAl1CFxIJSA==","queueTime":0,"applicationTime":0,"atts":"TRsDQwJMS04=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+<!-- Mirrored from xbsoftware.com/wp-content/themes/twentyfifteen/inc/time-widget.php by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 23 Jan 2019 13:44:39 GMT -->
+</html>
+
+>>>>>>> 59d8442487a7f19d975d72d9b1d8a10a41c25f72
