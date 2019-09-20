@@ -844,7 +844,13 @@ class PayrollController extends Controller
                 $params[$k]['Salary']                    = $payroll->salary;
                 $params[$k]['Bonus / THR']  = $payroll->bonus;
                 
-                foreach(PayrollEarnings::all() as $item)
+
+                if(\Auth::user()->project_id != Null){
+                    $payrollearning = PayrollEarnings::where('user_created', \Auth::user()->id)->get();
+                }else{
+                    $payrollearning = PayrollEarnings::all();
+                }
+                foreach($payrollearning as $item)
                 {   
                     $earning = PayrollEarningsEmployee::where('payroll_id', $payroll->id)->where('payroll_earning_id', $item->id)->first();
                     if($earning) 
@@ -858,7 +864,12 @@ class PayrollController extends Controller
                 }
 
                 // earnings
-                foreach(PayrollDeductions::all() as $item)
+                if(\Auth::user()->project_id != Null){
+                    $payrolldeduction = PayrollDeductions::where('user_created', \Auth::user()->id)->get();
+                }else{
+                    $payrolldeduction = PayrollDeductions::all();
+                }
+                foreach($payrolldeduction as $item)
                 {   
                     $deduction = PayrollDeductionsEmployee::where('payroll_id', $payroll->id)->where('payroll_deduction_id', $item->id)->first();
                     if($deduction) 
@@ -876,13 +887,23 @@ class PayrollController extends Controller
                 $params[$k]['Salary']                     = 0;
                 $params[$k]['Bonus / THR']                = 0;
 
-                foreach(PayrollEarnings::all() as $item)
+                if(\Auth::user()->project_id != Null){
+                    $payrollearning = PayrollEarnings::where('user_created', \Auth::user()->id)->get();
+                }else{
+                    $payrollearning = PayrollEarnings::all();
+                }
+                foreach($payrollearning as $item)
                 {   
                     $params[$k][$item->title] = 0;
                 }
 
                 // earnings
-                foreach(PayrollDeductions::all() as $item)
+                if(\Auth::user()->project_id != Null){
+                    $payrolldeduction = PayrollDeductions::where('user_created', \Auth::user()->id)->get();
+                }else{
+                    $payrolldeduction = PayrollDeductions::all();
+                }
+                foreach($payrolldeduction as $item)
                 {   
                     $params[$k][$item->title] = 0;
                 }
@@ -1853,7 +1874,6 @@ class PayrollController extends Controller
 
     	if($request->hasFile('file'))
         {
-            //$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($request->file);
             $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($request->file);
             $worksheet = $spreadsheet->getActiveSheet();
             $rows = [];
@@ -1905,7 +1925,12 @@ class PayrollController extends Controller
                     // jika payroll belum ada insert baru
                     if($new==1)
                     {
-                        foreach(PayrollEarnings::all() as $item)
+                        if(\Auth::user()->project_id != Null){
+                            $payrollearning = PayrollEarnings::where('user_created', \Auth::user()->id)->get();
+                        }else{
+                            $payrollearning = PayrollEarnings::all();
+                        }
+                        foreach($payrollearning as $item)
                         {   
                             if(!empty($row[$count_row]))
                             {
@@ -1918,7 +1943,12 @@ class PayrollController extends Controller
                             $count_row++;
                         }
 
-                        foreach(PayrollDeductions::all() as $item)
+                        if(\Auth::user()->project_id != Null){
+                            $payrolldeduction = PayrollDeductions::where('user_created', \Auth::user()->id)->get();
+                        }else{
+                            $payrolldeduction = PayrollDeductions::all();
+                        }
+                        foreach($payrolldeduction as $item)
                         {   
                             if(!empty($row[$count_row]))
                             {
@@ -1933,7 +1963,12 @@ class PayrollController extends Controller
                     }
                     if($new==0)
                     {
-                        foreach(PayrollEarnings::all() as $i)
+                        if(\Auth::user()->project_id != Null){
+                            $payrollearning = PayrollEarnings::where('user_created', \Auth::user()->id)->get();
+                        }else{
+                            $payrollearning = PayrollEarnings::all();
+                        }
+                        foreach($payrollearning as $i)
                         {   
                             if(!empty($row[$count_row]))
                             {
@@ -1953,7 +1988,12 @@ class PayrollController extends Controller
                         }
 
                         // earnings
-                        foreach(PayrollDeductions::all() as $i)
+                        if(\Auth::user()->project_id != Null){
+                            $payrolldeduction = PayrollDeductions::where('user_created', \Auth::user()->id)->get();
+                        }else{
+                            $payrolldeduction = PayrollDeductions::all();
+                        }
+                        foreach($payrolldeduction as $i)
                         {   
                             if(!empty($row[$count_row]))
                             {

@@ -1154,10 +1154,42 @@ function getTypeProvinsi($id_prov){
 	return $type;
 }
 
+function companyLogo($name){
+	$data	=	\App\Models\CompanyProfile::where('company_name', $name)->first();
+	if(!$data){
+		$logo = Null;
+	}else{
+		$logo = $data->company_logo;
+	}
+	
+
+	return $logo;
+}
+
 function getNamaHari($date){
 //	$arrayhari = array("Minggu"=>"Sun", "Senin"=>"Mon", "Selasa"=>"Tue", "Rabu"=>"Wed", "Kamis"=>"Thu", "Jumat"=>"Fri", "Sabtu"=>"Sat");
 	$arrayhari = array("Sunday"=>"Sun", "Monday"=>"Mon", "Tuesday"=>"Tue", "Wednesday"=>"Wed", "Thursday"=>"Thu", "Friday"=>"Fri", "Saturday"=>"Sat");
 	$day = array_search(date_format(date_create($date), "D"), $arrayhari);
 	
 	return $day;
+}
+
+function datesince($tgl){
+	$diff = abs(strtotime(date('Y-m-d H:i:s')) - strtotime($tgl));
+	$years   = floor($diff / (365*60*60*24)); 
+	$months  = floor(($diff - $years * 365*60*60*24) / (30*60*60*24)); 
+	$days    = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+	$hours   = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24)/ (60*60)); 
+	$minuts  = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24 - $days*60*60*24 - $hours*60*60)/ 60); 
+	
+	if($days > 0){
+		$waktu = $days.' days ago';
+	}else{
+		if($hours > 0){
+			$waktu = $hours.' hours ago';
+		}else{
+			$waktu = $minuts.' minute ago';
+		}
+	}
+	return $waktu;
 }

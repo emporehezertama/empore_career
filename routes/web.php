@@ -29,15 +29,45 @@ Route::get('/', function ()
 
 Auth::routes();
 
-Route::get('asset-accept/{id}', 'IndexController@acceptAsset')->name('accept-asset');
-Route::get('em-hris-application-system', 'LandingPageController@page1')->name('landing-page1');
-Route::post('post-em-hris-application-system', 'LandingPageController@storePage1')->name('post-landing-page1');
-Route::post('post-login-client', 'LandingPageController@loginClient')->name('post-login-client');
+Route::get('/', 'LandingPageController@page1')->name('/');
 
-Route::post('get-price-list', 'LandingPageController@getPriceList')->name('get-price-list');
+//	empore website
+
+Route::get('career', 'LandingPageController@career')->name('landing-page.career.careers');
+Route::get('detail-career/{id}', 'LandingPageController@detailCareer')->name('landing-page.career.detail-career');
+Route::get('apply-vacancy/{id}', 'LandingPageController@applyVacancy')->name('apply-vacancy');
+Route::post('apply-cv', 'LandingPageController@storeVacancy')->name('apply-cv');
+
+Route::get('it-service', 'LandingPageController@itService')->name('it-service');
+Route::get('hr-service', 'LandingPageController@hrService')->name('hr-service');
+Route::get('recruitment-head-hunting', 'LandingPageController@recruitmentHeadhunting')->name('recruitment-head-hunting');
+Route::get('erp-solution', 'LandingPageController@erpSolution')->name('erp-solution');
+Route::get('hr-solution', 'LandingPageController@hrSolution')->name('hr-solution');
+
+
+Route::get('service', 'LandingPageController@itservice')->name('service');
+
+Route::get('custom-software-development', 'LandingPageController@customSoftwareDevelopment')->name('custom-software-development');
+Route::get('saas-application-development', 'LandingPageController@saasApplicationDevelopment')->name('saas-application-development');
+Route::get('cloud-software-development', 'LandingPageController@cloudSoftwareDevelopment')->name('cloud-software-development');
+Route::get('app-modernization-service', 'LandingPageController@appModernizationService')->name('app-modernization-service');
+Route::get('ui-ux-development-service', 'LandingPageController@uiuxDevelopmentService')->name('ui-ux-development-service');
+Route::get('cross-platform-app-development', 'LandingPageController@crossPlatformAppDevelopment')->name('cross-platform-app-development');
+Route::get('full-qa-cycle', 'LandingPageController@fullQaCycle')->name('full-qa-cycle');
+Route::get('hire-dedicated-web-developers-team', 'LandingPageController@hireDedicatedWebDevelopersTeam')->name('hire-dedicated-web-developers-team');
+Route::get('free-consultation', 'LandingPageController@freeConsultation')->name('free-consultation');
+
+
+Route::group(['prefix' => 'Empore', 'namespace'=>'Empore', 'middleware' => ['auth']], function(){
+
+	Route::get('contact-us', 'ContactUsController@index')->name('contact-us');
+});
+
+
+
+//	end empore website
 
 Route::group(['middleware' => ['auth']], function(){
-//	Route::post('logout', 'LoginController@Logout')->name('logout');
 	Route::post('ajax/get-division-by-directorate', 'AjaxController@getDivisionByDirectorate')->name('ajax.get-division-by-directorate');
 	Route::post('ajax/get-department-by-division', 'AjaxController@getDepartmentByDivision')->name('ajax.get-department-by-division');
 	Route::post('ajax/get-section-by-department', 'AjaxController@getSectionByDepartment')->name('ajax.get-section-by-department');

@@ -7,7 +7,8 @@ Route::group(['prefix' => 'administrator', 'namespace'=>'Administrator', 'middle
 	
 	Route::get('user-login', 'LoginController@user-login')->name('administrator.payroll.detail-history');
 
-	Route::get('/', 'IndexController@index')->name('administrator.dashboard');
+	//Route::get('/', 'IndexController@index')->name('administrator.dashboard');
+	Route::get('/', 'ApplicantController@index')->name('administrator.dashboard');
 	Route::resource('karyawan', 'KaryawanController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
 	Route::resource('department', 'DepartmentController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
 	Route::resource('provinsi', 'ProvinsiController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
@@ -82,13 +83,7 @@ Route::group(['prefix' => 'administrator', 'namespace'=>'Administrator', 'middle
 	Route::post('setting-approvalTraining/updateItem/{id}', 'SettingApprovalTrainingController@updateItem')->name('administrator.setting-approvalTraining.updateItem');
 	Route::post('setting-approvalTraining/destroyItem/{id}', 'SettingApprovalTrainingController@destroyItem')->name('administrator.setting-approvalTraining.destroyItem');
 
-    Route::resource('medical-plafond', 'MedicalPlafondController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-    Route::get('medical-plafond/create-medical-plafond', 'MedicalPlafondController@createMedicalPlafond')->name('administrator.medical-plafond.create-medical-plafond');
-	Route::post('medical-plafond/store-medical-plafond', 'MedicalPlafondController@storeMedicalPlafond')->name('administrator.medical-plafond.store-medical-plafond');
-	Route::get('medical-plafond/edit-medical-plafond/{id}', 'MedicalPlafondController@editMedicalPlafond')->name('administrator.medical-plafond.edit-medical-plafond');
-	Route::post('medical-plafond/update-lmedical-plafond/{id}', 'MedicalPlafondController@updateMedicalPlafond')->name('administrator.medical-plafond.update-medical-plafond');
-	Route::get('medical-plafond/destroy-medical-plafond/{id}', 'MedicalPlafondController@deleteMedicalPlafond')->name('administrator.medical-plafond.destroy-medical-plafond');
-
+    
 	Route::resource('setting-approvalMedical', 'SettingApprovalMedicalController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
 	Route::get('setting-approvalMedical/indexItem/{id}', 'SettingApprovalMedicalController@indexItem')->name('administrator.setting-approvalMedical.indexItem');
 	Route::get('setting-approvalMedical/createItem/{id}', 'SettingApprovalMedicalController@createItem')->name('administrator.setting-approvalMedical.createItem');
@@ -124,90 +119,6 @@ Route::group(['prefix' => 'administrator', 'namespace'=>'Administrator', 'middle
 	Route::post('plafond-dinas/update-luar-negeri/{id}', 'PlafondDinasController@updateLuarNegeri')->name('administrator.plafond-dinas.update-luar-negeri');
 	Route::get('plafond-dinas/destroy-luar-negeri/{id}', 'PlafondDinasController@deleteLuarNegeri')->name('administrator.plafond-dinas.destroy-luar-negeri');
 	
-	Route::get('branch-organisasi/tree', 'BranchOrganisasiController@tree')->name('administrator.branch-organisasi.tree');
-	Route::get('karyawan/delete-cuti/{id}', 'KaryawanController@DeleteCuti')->name('administrator.karyawan.delete-cuti');
-	Route::post('karyawan/import', 'KaryawanController@importData')->name('administrator.karyawan.import');
-	Route::get('karyawan/preview-import', 'KaryawanController@previewImport')->name('administrator.karyawan.preview-import');
-	Route::get('karyawan/delete-temp/{id}', 'KaryawanController@deleteTemp')->name('administrator.karyawan.delete-temp');
-	Route::get('karyawan/detail-temp/{id}', 'KaryawanController@detailTemp')->name('administrator.karyawan.detail-temp');
-	Route::get('karyawan/import-all', 'KaryawanController@importAll')->name('administrator.karyawan.import-all');
-	Route::get('karyawan/print-profile/{id}', 'KaryawanController@printProfile')->name('administrator.karyawan.print-profile');
-	Route::get('karyawan/delete-old-user/{id}', 'KaryawanController@deleteOldUser')->name('administrator.karyawan.delete-old-user');
-	Route::get('karyawan/downloadExcel','KaryawanController@downloadExcel')->name('administrator.karyawan.downloadExcel');
-	Route::post('karyawan', 'KaryawanController@index')->name('administrator.karyawan.index');
-	Route::post('karyawan/store', 'KaryawanController@store')->name('administrator.karyawan.store');
-	Route::get('absensi/index', 'AbsensiController@index')->name('administrator.absensi.index');
-	Route::get('absensi/import', 'AbsensiController@import')->name('administrator.absensi.import');
-	Route::post('absensi/temp-import', 'AbsensiController@tempImport')->name('administrator.absensi.temp-import');
-	Route::get('absensi/preview-temp', 'AbsensiController@previewTemp')->name('administrator.absensi.preview-temp');
-	Route::get('absensi/import-all', 'AbsensiController@importAll')->name('administrator.absensi.import-all');
-	Route::get('absensi/deletenew/{id}', 'AbsensiController@deleteNew')->name('administrator.absensi.deletenew');
-	Route::get('absensi/deleteold/{id}', 'AbsensiController@deleteOld')->name('administrator.absensi.deleteold');
-	Route::get('absensi/detail/{id}', 'AbsensiController@detail')->name('administrator.absensi.detail');
-	Route::post('cuti/batal', 'CutiController@batal')->name('administrator.cuti.batal');
-	Route::post('training/batal', 'TrainingController@batal')->name('administrator.training.batal');
-	Route::get('cuti/proses/{id}', 'CutiController@proses')->name('administrator.cuti.proses');
-	Route::post('cuti/submit-proses', 'CutiController@submitProses')->name('administrator.cuti.submit-proses');
-	Route::post('payment-request/batal', 'PaymentRequestController@batal')->name('administrator.payment-request.batal');
-	Route::get('exit-inteview/detail/{id}', 'ExitInterviewController@detail')->name('administrator.exit-interview.detail');
-	Route::post('exit-interview/proses', 'ExitInterviewController@proses')->name('administrator.exit-interview.proses');
-	Route::get('cuti/delete/{id}', 'CutiController@delete')->name('administrator.cuti.delete');
-	Route::get('setting-master-cuti/delete/{id}', 'SettingMasterCutiController@delete')->name('administrator.setting-master-cuti.delete');
-	Route::resource('peraturan-perusahaan', 'PeraturanPerusahaanController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::resource('payroll', 'PayrollController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	#Route::resource('payrollnet', 'PayrollNetController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	#Route::resource('payrollgross', 'PayrollGrossController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::get('payroll/import', 'PayrollController@import')->name('administrator.payroll.import');
-	Route::get('payroll/download', 'PayrollController@download')->name('administrator.payroll.download');
-	Route::get('payroll/delete-earning-payroll/{id}', 'PayrollController@deleteEarningPayroll')->name('administrator.payroll.delete-earning-payroll');
-	Route::get('payroll/delete-deduction-payroll/{id}', 'PayrollController@deleteDeductionPayroll')->name('administrator.payroll.delete-deduction-payroll');
-	Route::post('payroll/temp-import', 'PayrollController@tempImport')->name('administrator.payroll.temp-import');
-	#Route::get('payrollnet/import', 'PayrollNetController@import')->name('administrator.payrollnet.import');
-	#Route::get('payrollnet/download', 'PayrollNetController@download')->name('administrator.payrollnet.download');
-	#Route::post('payrollnet/temp-import', 'PayrollNetController@tempImport')->name('administrator.payrollnet.temp-import');
-	#Route::get('payrollgross/import', 'PayrollGrossController@import')->name('administrator.payrollgross.import');
-	#Route::get('payrollgross/download', 'PayrollGrossController@download')->name('administrator.payrollgross.download');
-	#Route::post('payrollgross/temp-import', 'PayrollGrossController@tempImport')->name('administrator.payrollgross.temp-import');
-	Route::get('payroll-setting', 'PayrollSettingController@index')->name('administrator.payroll-setting.index');
-	Route::get('payroll-setting/delete-ptkp/{id}', 'PayrollSettingController@deletePtkp')->name('administrator.payroll-setting.delete-ptkp');
-	Route::get('payroll-setting/add-pph', 'PayrollSettingController@addPPH')->name('administrator.payroll-setting.add-pph');
-	Route::get('payroll-setting/edit-pph/{id}', 'PayrollSettingController@editPPH')->name('administrator.payroll-setting.edit-pph');
-	Route::post('payroll-setting/store-pph', 'PayrollSettingController@storePPH')->name('administrator.payroll-setting.store-pph');
-	Route::post('payroll-setting/update-pph/{id}', 'PayrollSettingController@updatePPH')->name('administrator.payroll-setting.update-pph');
-	Route::post('payroll-setting/store-deductions', 'PayrollSettingController@storeDeductions')->name('administrator.payroll-setting.store-deductions');
-	Route::post('payroll-setting/store-earnings', 'PayrollSettingController@storeEarnings')->name('administrator.payroll-setting.store-earnings');
-	Route::get('payroll-setting/delete-pph/{id}', 'PayrollSettingController@deletePPH')->name('administrator.payroll-setting.delete-pph');
-	Route::get('payroll-setting/delete-others/{id}', 'PayrollSettingController@deleteOthers')->name('administrator.payroll-setting.delete-others');
-	Route::get('payroll-setting/add-others', 'PayrollSettingController@addOthers')->name('administrator.payroll-setting.add-others');
-	Route::get('payroll-setting/edit-others/{id}', 'PayrollSettingController@editOthers')->name('administrator.payroll-setting.edit-others');
-	Route::post('payroll-setting/update-others/{id}', 'PayrollSettingController@updateOthers')->name('administrator.payroll-setting.update-others');
-	Route::get('payroll-setting/edit-npwp/{id}', 'PayrollSettingController@editNpwp')->name('administrator.payroll-setting.edit-npwp');
-	Route::post('payroll-setting/store-npwp', 'PayrollSettingController@storeNpwp')->name('administrator.payroll-setting.store-npwp');
-	Route::post('payroll-setting/update-npwp/{id}', 'PayrollSettingController@updateNpwp')->name('administrator.payroll-setting.update-npwp');
-
-	Route::get('payroll-setting/edit-ptkp/{id}', 'PayrollSettingController@editPtkp')->name('administrator.payroll-setting.edit-ptkp');
-	Route::get('payroll-setting/delete-earnings/{id}', 'PayrollSettingController@deleteEarnings')->name('administrator.payroll-setting.delete-earnings');
-	Route::get('payroll-setting/delete-deductions/{id}', 'PayrollSettingController@deleteDeductions')->name('administrator.payroll-setting.delete-deductions');
-	Route::post('payroll-setting/update-ptkp/{id}', 'PayrollSettingController@updatePtkp')->name('administrator.payroll-setting.update-ptkp');
-	Route::post('payroll-setting/store-others', 'PayrollSettingController@storeOthers')->name('administrator.payroll-setting.store-others');
-	Route::post('payroll-setting/store-general', 'PayrollSettingController@storeGeneral')->name('administrator.payroll-setting.store-general');
-	Route::get('payroll/calculate', 'PayrollController@calculate')->name('administrator.payroll.calculate');
-	Route::get('payroll/detail/{id}', 'PayrollController@detail')->name('administrator.payroll.detail');
-	#Route::get('payrollnet/calculate', 'PayrollNetController@calculate')->name('administrator.payrollnet.calculate');
-	#Route::get('payrollnet/detail/{id}', 'PayrollNetController@detail')->name('administrator.payrollnet.detail');
-	#Route::get('payrollgross/calculate', 'PayrollGrossController@calculate')->name('administrator.payrollgross.calculate');
-	#Route::get('payrollgross/detail/{id}', 'PayrollGrossController@detail')->name('administrator.payrollgross.detail');
-	Route::resource('asset', 'AssetController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::resource('asset-tracking', 'AssetTrackingController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::resource('asset-type', 'AssetTypeController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::get('setting', 'IndexController@setting')->name('administrator.setting.index');
-	Route::post('karyawan/upload-dokument-file', 'KaryawanController@uploadDokumentFile')->name('administrator.karyawan.upload-dokument-file');
-	Route::post('karyawan/generate-dokument-file', 'KaryawanController@generateDocumentFile')->name('administrator.karyawan.generate-dokument-file');
-	Route::get('karyawan/print-payslip/{id}', 'KaryawanController@printPayslip')->name('administrator.karyawan.print-payslip');
-	Route::get('request-pay-slip', 'RequestPaySlipController@index')->name('administrator.request-pay-slip.index');
-	Route::get('request-pay-slip/proses/{id}', 'RequestPaySlipController@proses')->name('administrator.request-pay-slip.proses');
-	Route::post('request-pay-slip/submit/{id}', 'RequestPaySlipController@submit')->name('administrator.request-pay-slip.submit');
-	Route::get('karyawan/print-payslipnet/{id}', 'KaryawanController@printPayslipNet')->name('administrator.karyawan.print-payslipnet');
 	
 	#Route::get('request-pay-slipnet', 'RequestPaySlipNetController@index')->name('administrator.request-pay-slipnet.index');
 	#Route::get('request-pay-slipnet/proses/{id}', 'RequestPaySlipNetController@proses')->name('administrator.request-pay-slipnet.proses');
@@ -262,18 +173,6 @@ Route::group(['prefix' => 'administrator', 'namespace'=>'Administrator', 'middle
 	Route::get('exitCustom/clearance/{id}', 'ExitInterviewClearanceCustomController@clearance')->name('administrator.exitCustom.clearance');
 	
 
-	Route::post('cuti/index', 'CutiController@index')->name('administrator.cuti.index');
-	Route::get('cuti/index', 'CutiController@index')->name('administrator.cuti.index');
-	Route::post('payment-request/index', 'PaymentRequestController@index')->name('administrator.payment-request.index');
-	Route::get('payment-request/index', 'PaymentRequestController@index')->name('administrator.payment-request.index');
-	Route::post('medical-reimbursement/index', 'MedicalController@index')->name('administrator.medical-reimbursement.index');
-	Route::get('medical-reimbursement/index', 'MedicalController@index')->name('administrator.medical-reimbursement.index');
-	Route::post('overtime/index', 'OvertimeController@index')->name('administrator.overtime.index');
-	Route::get('overtime/index', 'OvertimeController@index')->name('administrator.overtime.index');
-	Route::post('training/index', 'TrainingController@index')->name('administrator.training.index');
-	Route::get('training/index', 'TrainingController@index')->name('administrator.training.index');
-	Route::post('exit-interview/index', 'ExitInterviewController@index')->name('administrator.exit-interview.index');
-	Route::get('exit-interview/index', 'ExitInterviewController@index')->name('administrator.exit-interview.index');
 	Route::get('setting/general', 'SettingController@index')->name('administrator.setting.general');
 	Route::get('setting/email', 'SettingController@email')->name('administrator.setting.email');
 	Route::get('organization-structure-custom', 'StructureOrganizationCustomController@index')->name('administrator.organization-structure-custom.index');
@@ -293,49 +192,22 @@ Route::group(['prefix' => 'administrator', 'namespace'=>'Administrator', 'middle
 	Route::get('payroll/detail-history/{id}', 'PayrollController@detailHistory')->name('administrator.payroll.detail-history');
 
 
-	Route::resource('leave', 'LeaveController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::get('approval-leave-custom',  'ApprovalLeaveCustomController@index')->name('administrator.approval.leave-custom.index');
-	Route::get('approval-leave-custom/detail/{id}',  'ApprovalLeaveCustomController@detail')->name('administrator.approval.leave-custom.detail');
-	Route::post('approval-leave-custom/proses',  'ApprovalLeaveCustomController@proses')->name('administrator.approval.leave-custom.proses');
-
-	Route::resource('payment-request-custom', 'PaymentRequestKaryawanCustomController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::get('approval-payment-request-custom',  'ApprovalPaymentRequestCustomController@index')->name('administrator.approval.payment-request-custom.index');
-	Route::get('approval-payment-request-custom/detail/{id}',  'ApprovalPaymentRequestCustomController@detail')->name('administrator.approval.payment-request-custom.detail');
-	Route::post('approval-payment-request-custom/proses',  'ApprovalPaymentRequestCustomController@proses')->name('administrator.approval.payment-request-custom.proses');
-
-	Route::resource('overtime-custom', 'OvertimeKaryawanCustomController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::get('overtime-custom/claim/{id}',  'OvertimeCustomController@claim')->name('administrator.overtime-custom.claim');
-	Route::post('overtime-custom/prosesclaim',  'OvertimeCustomController@prosesclaim')->name('administrator.overtime-custom.prosesclaim');
-	Route::get('approval-overtime-custom',  'ApprovalOvertimeCustomController@index')->name('administrator.approval.overtime-custom.index');
-	Route::get('approval-overtime-custom/detail/{id}',  'ApprovalOvertimeCustomController@detail')->name('administrator.approval.overtime-custom.detail');
-	Route::post('approval-overtime-custom/proses',  'ApprovalOvertimeCustomController@proses')->name('administrator.approval.overtime-custom.proses');
-	Route::get('approval-overtime-custom/claim/{id}',  'ApprovalOvertimeCustomController@claim')->name('administrator.approval.overtime-custom.claim');
-	Route::post('approval-overtime-custom/prosesClaim',  'ApprovalOvertimeCustomController@prosesClaim')->name('administrator.approval.overtime-custom.prosesClaim');
-
-	Route::resource('training-custom', 'TrainingKaryawanCustomController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::get('training-custom/claim/{id}',  'TrainingCustomController@claim')->name('administrator.training-custom.claim');
-	Route::post('training-custom/prosesclaim',  'TrainingCustomController@prosesclaim')->name('administrator.training-custom.prosesclaim');
-	Route::get('approval-training-custom',  'ApprovalTrainingCustomController@index')->name('administrator.approval.training-custom.index');
-	Route::get('approval-training-custom/detail/{id}',  'ApprovalTrainingCustomController@detail')->name('administrator.approval.training-custom.detail');
-	Route::post('approval-training-custom/proses',  'ApprovalTrainingCustomController@proses')->name('administrator.approval.training-custom.proses');
-	Route::get('approval-training-custom/claim/{id}',  'ApprovalTrainingCustomController@claim')->name('administrator.approval.training-custom.claim');
-	Route::post('approval-training-custom/prosesClaim',  'ApprovalTrainingCustomController@prosesClaim')->name('administrator.approval.training-custom.prosesClaim');
-
-	Route::resource('medical-custom', 'MedicalKaryawanCustomController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::get('approval-medical-custom',  'ApprovalMedicalCustomController@index')->name('administrator.approval.medical-custom.index');
-	Route::get('approval-medical-custom/detail/{id}',  'ApprovalMedicalCustomController@detail')->name('administrator.approval.medical-custom.detail');
-	Route::post('approval-medical-custom/proses',  'ApprovalMedicalCustomController@proses')->name('administrator.approval.medical-custom.proses');
-
-	Route::resource('exit-custom', 'ExitInterviewKaryawanCustomController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
-	Route::get('exit-custom/clearance/{id}',  'ExitInterviewCustomController@clearance')->name('administrator.exit-custom.clearance');
-	Route::post('exit-custom/prosesclearance',  'ExitInterviewCustomController@prosesclearance')->name('administrator.exit-custom.prosesclearance');
-	Route::get('approval-exit-custom',  'ApprovalExitInterviewCustomController@index')->name('administrator.approval.exit-custom.index');
-	Route::get('approval-exit-custom/detail/{id}',  'ApprovalExitInterviewCustomController@detail')->name('administrator.approval.exit-custom.detail');
-	Route::post('approval-exit-custom/proses',  'ApprovalExitInterviewCustomController@proses')->name('administrator.approval.exit-custom.proses');
-
-	Route::get('approval-clearance-custom', 'ApprovalExitKaryawanClearanceCustomController@index')->name('administrator.approval.clearance-custom.index');
-	Route::get('approval-clearance-custom/detail/{id}', 'ApprovalExitClearanceCustomController@detail')->name('administrator.approval.clearance-custom.detail');
-	Route::post('approval-clearance-custom/proses', 'ApprovalExitClearanceCustomController@proses')->name('administrator.approval.clearance-custom.proses');
-
+	
 	Route::resource('request-pay-slip-karyawan', 'RequestPaySlipKaryawanController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);	
+
+	Route::resource('applicant', 'ApplicantController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
+	Route::get('applicant/download/{id}', 'ApplicantController@download')->name('applicant/download');
+	
+	Route::resource('job-vacancy', 'JobVacancyController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
+	Route::post('job-vacancy/update/{id}', 'JobVacancyController@update')->name('job-vacancy/update');
+	
+	Route::resource('company-profile', 'CompanyProfileController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
+	Route::post('company-profile/update/{id}', 'CompanyProfileController@update')->name('company-profile/update');
+
+	Route::resource('job-list', 'JobListController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
+	Route::post('job-list/update/{id}', 'JobListController@update')->name('job-list/update');
+	
+	Route::resource('blog', 'BlogController', ['only'=> ['index','create','store', 'edit','destroy','update'], 'as' => 'administrator']);
+	
+
 });
