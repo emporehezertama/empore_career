@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 
 /**
@@ -1193,8 +1193,6 @@ function datesince($tgl){
 		}
 	}
 	return $waktu;
-=======
-<?php
 
 /**
  * Get Setting
@@ -2388,5 +2386,7 @@ function datesince($tgl){
 		}
 	}
 	return $waktu;
->>>>>>> 59d8442487a7f19d975d72d9b1d8a10a41c25f72
+
 }
+}
+?>
